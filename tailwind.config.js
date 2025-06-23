@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         'calvary-blue': '#4EC2E6',
+        'custom-blue': '#337b92',
       },
     },
   },
