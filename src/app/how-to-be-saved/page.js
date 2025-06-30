@@ -1,5 +1,6 @@
 'use client'
 import ContactForm from '../components/ContactForm';
+import Image from 'next/image';
 
 export default function HowToBeSavedPage() {
   return (
@@ -7,13 +8,25 @@ export default function HowToBeSavedPage() {
       {/* Header Section */}
       <section className="w-full bg-custom-blue text-white py-16">
         <div className="w-3/4 mx-auto text-center">
-          <h1 className="text-5xl font-extrabold mb-2">HOW TO BE SAVED</h1>
+          <h1 className="text-5xl font-extrabold mb-4">HOW TO BE SAVED</h1>
         </div>
       </section>
 
+      {/* Bible Wood Image - Full Width */}
+      <div className="w-full relative h-80">
+        <Image
+          src="/bible-wood.jpg"
+          alt="Bible on Wood"
+          fill
+          className="object-cover object-[center_70%]"
+          priority
+          unoptimized
+        />
+      </div>
+
       {/* Content Sections */}
-      <section className="w-full bg-white text-black py-16">
-        <div className="w-3/4 mx-auto space-y-12">
+      <section className="w-full bg-white text-black py-8">
+        <div className="w-3/4 mx-auto space-y-8">
           
           {/* 1. God loves you */}
           <div className="bg-gray-50 rounded-lg p-8">

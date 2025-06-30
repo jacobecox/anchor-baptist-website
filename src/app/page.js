@@ -13,28 +13,30 @@ export default function HomePage() {
         {/* Simi Valley Image */}
         <div className="w-full relative h-[400px]">
           <Image
-            src="/simi-valley.webp"
+            src="/simi-valley.jpeg"
             alt="Simi Valley"
             fill
-            className="object-cover object-[center_50%]"
+            className="object-cover object-[center_90%]"
             priority
           />
+          {/* Opacity overlay */}
+          <div className="absolute inset-0 bg-white/40"></div>
         </div>
 
         {/* WHO WE ARE Section */}
-        <div className="w-full bg-[#4EC3E0] text-white flex items-center justify-center pb-4 pt-10">
-          <h2 className="text-5xl font-extrabold text-center w-3/4">WHO WE ARE:</h2>
+        <div className="w-full bg-white text-black flex items-center justify-center pb-4 pt-10">
+          <h2 className="text-5xl font-extrabold text-center w-3/4 text-custom-blue">WHO WE ARE:</h2>
         </div>
 
       {/* Hero Section */}
-        <div className="w-full flex items-center justify-center p-8 bg-[#4EC3E0]">
+        <div className="w-full flex items-center justify-center p-8 bg-white">
           <div className="w-3/4 md:w-1/2 text-center">
-            <h1 className="text-2xl mb-10 text-white">
+            <h1 className="text-2xl mb-4 text-gray-600">
           Calvary Baptist Church is an independent, Bible-believing, Baptist church located in beautiful Simi Valley, California.
         </h1>
             <button 
               onClick={() => router.push('/beliefs')}
-              className="bg-custom-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-slate-700 transition-colors duration-200"
+              className="bg-[#4EC3E0] text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#3db1d0] transition-colors duration-200"
             >
           WHAT WE BELIEVE
         </button>
@@ -42,7 +44,7 @@ export default function HomePage() {
         </div>
 
         {/* WORSHIP WITH US Section */}
-        <div className="w-full bg-white text-black flex items-center justify-center py-24 relative">
+        <div className="w-full bg-gray-100 text-custom-blue flex items-center justify-center py-24 relative">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -89,13 +91,13 @@ export default function HomePage() {
         {/* BRING YOUR FAMILY Section */}
         <div className="w-full bg-white text-black flex items-center justify-center py-24">
           <div className="w-3/4 md:w-1/2 text-center">
-            <h3 className="text-5xl font-extrabold mb-4">BRING YOUR FAMILY</h3>
-            <p className="text-2xl mb-6">
+            <h3 className="text-5xl font-extrabold mb-4 text-custom-blue">BRING YOUR FAMILY</h3>
+            <p className="text-2xl mb-6 text-gray-600">
               Our friendly environment at Calvary welcomes you and your family to worship with us this Sunday!
             </p>
             <button 
               onClick={() => router.push('/visit')}
-              className="bg-custom-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-slate-700 transition-colors duration-200"
+              className="bg-[#4EC3E0] text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#3db1d0] transition-colors duration-200"
             >
               VISIT US
             </button>
@@ -103,7 +105,7 @@ export default function HomePage() {
         </div>
 
         {/* Contact Form Section */}
-        <div className="w-full bg-custom-blue text-white py-24">
+        <div className="w-full bg-custom-blue text-white py-24" data-contact-form>
           <div className="w-3/4 mx-auto">
             <p className="text-2xl text-center mb-4">HAVE MORE QUESTIONS?</p>
             <h3 className="text-7xl font-extrabold text-center mb-4">CONTACT US</h3>
@@ -156,7 +158,7 @@ export default function HomePage() {
             {/* Church Logo */}
             <div className="mb-12">
               <Image
-                src="/calvary baptist church simi valley.png"
+                src="/calvary-baptist-logo.png"
                 alt="Calvary Baptist Church Simi Valley"
                 width={600}
                 height={200}

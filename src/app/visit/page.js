@@ -7,10 +7,16 @@ export default function VisitPage() {
 
   return (
     <main className="font-sans">
+      {/* Header Section */}
+      <section className="w-full bg-custom-blue text-white py-16">
+        <div className="w-3/4 mx-auto text-center">
+          <h1 className="text-5xl font-extrabold mb-4">VISIT US</h1>
+        </div>
+      </section>
+
       {/* Meeting Information Section */}
       <section className="w-full bg-white text-black py-16">
         <div className="w-3/4 mx-auto text-center">
-          <h1 className="text-5xl font-extrabold mb-8">VISIT US</h1>
           <div className="text-black rounded-lg p-8 mb-4">
             <h2 className="text-3xl font-bold mb-4">We Meet at the Congregation B&apos;nai Emet Synagogue</h2>
             <p className="text-2xl mb-2">9 West Bonita</p>

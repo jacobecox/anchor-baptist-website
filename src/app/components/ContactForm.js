@@ -48,7 +48,7 @@ export default function ContactForm({
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full p-3 rounded-lg border border-gray-300 focus:border-custom-blue focus:outline-none"
+                className="w-full p-3 rounded-lg border-2 border-gray-300 focus:border-custom-blue focus:outline-none"
                 placeholder="Your name"
                 required
               />
@@ -61,7 +61,7 @@ export default function ContactForm({
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 rounded-lg border border-gray-300 focus:border-custom-blue focus:outline-none"
+                className="w-full p-3 rounded-lg border-2 border-gray-300 focus:border-custom-blue focus:outline-none"
                 placeholder="Your email"
                 required
               />
@@ -75,7 +75,7 @@ export default function ContactForm({
               value={formData.message}
               onChange={handleChange}
               rows="4"
-              className="w-full p-3 rounded-lg border border-gray-300 focus:border-custom-blue focus:outline-none"
+              className="w-full p-3 rounded-lg border-2 border-gray-300 focus:border-custom-blue focus:outline-none"
               placeholder="Your message"
               required
             ></textarea>

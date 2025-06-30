@@ -16,9 +16,9 @@ export default function WatchPage() {
       </section>
 
       {/* Main Content */}
-      <section className="w-full bg-white text-black py-16">
+      <section className="w-full bg-white text-black">
         <div className="w-3/4 mx-auto text-center">
-          <div className="bg-gray-50 rounded-lg p-12 mb-12">
+          <div className="rounded-lg p-12 mb-12">
             <h2 className="text-4xl font-bold mb-6 text-custom-blue">Watch Our Services Online</h2>
             <p className="text-xl mb-8">
               Can&apos;t make it to church in person? Join us online through our YouTube channel where we stream our services live and share recorded sermons.
@@ -33,27 +33,31 @@ export default function WatchPage() {
               </svg>
               WATCH ON YOUTUBE
             </button>
-            <p className="text-lg mt-6">
-              Services are streamed live on our YouTube channel. Subscribe to get notified when we go live!
+            
+            <p className="text-lg mt-6 text-gray-600">
+              Click the button above to open our YouTube channel in a new window
             </p>
           </div>
         </div>
 
         {/* Service Times Section - Full Width */}
-        <div className="w-full bg-custom-blue text-white py-16">
+        <div className="w-full bg-gray-100 text-custom-blue py-16">
           <div className="w-3/4 mx-auto text-center">
-            <h3 className="text-3xl font-bold mb-6">Service Times</h3>
+            <h3 className="text-4xl font-bold mb-6">Service Times</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h4 className="text-2xl font-bold mb-4">SUNDAY</h4>
-                <p className="text-xl mb-2">Morning Service | 12pm</p>
-                <p className="text-xl">Evening Service | 6pm</p>
+                <h4 className="text-3xl font-bold mb-4">SUNDAY</h4>
+                <p className="text-2xl mb-2">Morning Service | 12pm</p>
+                <p className="text-2xl">Evening Service | 6pm</p>
               </div>
               <div>
-                <h4 className="text-2xl font-bold mb-4">WEDNESDAY</h4>
-                <p className="text-xl">Evening Service | 6:30pm</p>
+                <h4 className="text-3xl font-bold mb-4">WEDNESDAY</h4>
+                <p className="text-2xl">Evening Service | 6:30pm</p>
               </div>
             </div>
+            <p className="text-2xl mt-6 text-gray-600">
+              Services are streamed live on our YouTube channel. Subscribe to get notified when we go live!
+            </p>
           </div>
         </div>
       </section>
@@ -62,10 +66,10 @@ export default function WatchPage() {
       <ContactForm 
         title="CONTACT US"
         subtitle="Having trouble accessing our live stream? We're here to help!"
-        backgroundColor="bg-white"
-        textColor="text-black"
-        buttonColor="bg-custom-blue"
-        buttonTextColor="text-white"
+        backgroundColor="bg-custom-blue"
+        textColor="text-white"
+        buttonColor="bg-white"
+        buttonTextColor="text-custom-blue"
       />
     </main>
   );
