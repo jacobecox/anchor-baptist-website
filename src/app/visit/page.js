@@ -1,9 +1,42 @@
 'use client'
 import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import ContactForm from '../components/ContactForm';
+import { supabase } from '../../lib/supabase';
 
 export default function VisitPage() {
   const router = useRouter();
+  const [serviceTimes, setServiceTimes] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch service times from Supabase
+  useEffect(() => {
+    const fetchServiceTimes = async () => {
+      const { data, error } = await supabase
+        .from('service_times')
+        .select('*')
+        .order('day_of_week', { ascending: true });
+
+      if (error) {
+        console.error('Error fetching service times:', error);
+      } else {
+        setServiceTimes(data || []);
+      }
+      setLoading(false);
+    };
+
+    fetchServiceTimes();
+  }, []);
+
+  // Group service times by day
+  const groupedServices = serviceTimes.reduce((acc, service) => {
+    const day = service.day_of_week;
+    if (!acc[day]) {
+      acc[day] = [];
+    }
+    acc[day].push(service);
+    return acc;
+  }, {});
 
   return (
     <main className="font-sans">
@@ -57,15 +90,48 @@ export default function VisitPage() {
         <div className="w-3/4 mx-auto text-center">
           <h2 className="text-4xl font-extrabold mb-8">SERVICE TIMES</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div className="text-black rounded-lg p-6">
-              <h3 className="text-2xl font-bold mb-4">SUNDAY</h3>
-              <p className="text-xl mb-2">Morning Service | 12pm</p>
-              <p className="text-xl">Evening Service | 6pm</p>
-            </div>
-            <div className="text-black rounded-lg p-6">
-              <h3 className="text-2xl font-bold mb-4">WEDNESDAY</h3>
-              <p className="text-xl">Evening Service | 6:30pm</p>
-            </div>
+            {loading ? (
+              <>
+                <div className="text-black rounded-lg p-6">
+                  <h3 className="text-2xl font-bold mb-4">SUNDAY</h3>
+                  <p className="text-xl mb-2">Loading...</p>
+                </div>
+                <div className="text-black rounded-lg p-6">
+                  <h3 className="text-2xl font-bold mb-4">WEDNESDAY</h3>
+                  <p className="text-xl">Loading...</p>
+                </div>
+              </>
+            ) : Object.keys(groupedServices).length > 0 ? (
+              Object.entries(groupedServices).map(([day, services]) => (
+                <div key={day} className="text-black rounded-lg p-6">
+                  <h3 className="text-2xl font-bold mb-4">{day.toUpperCase()}</h3>
+                  {services
+                    .sort((a, b) => {
+                      // Sort Sunday Morning before Sunday Evening
+                      if (a.service_name.includes('Morning') && b.service_name.includes('Evening')) return -1;
+                      if (a.service_name.includes('Evening') && b.service_name.includes('Morning')) return 1;
+                      return 0;
+                    })
+                    .map((service, index) => (
+                      <p key={index} className="text-xl mb-2">
+                        {service.service_name} | {service.time}
+                      </p>
+                    ))}
+                </div>
+              ))
+            ) : (
+              <>
+                <div className="text-black rounded-lg p-6">
+                  <h3 className="text-2xl font-bold mb-4">SUNDAY</h3>
+                  <p className="text-xl mb-2">Morning Service | 12pm</p>
+                  <p className="text-xl">Evening Service | 6pm</p>
+                </div>
+                <div className="text-black rounded-lg p-6">
+                  <h3 className="text-2xl font-bold mb-4">WEDNESDAY</h3>
+                  <p className="text-xl">Evening Service | 6:30pm</p>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>

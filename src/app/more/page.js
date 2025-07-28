@@ -30,23 +30,11 @@ export default function MorePage() {
                 onClick={() => router.push('/events')}
                 className="bg-calvary-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#3db1d0] transition-colors duration-200"
               >
-                VIEW EVENTS
+                VIEW CALENDAR
               </button>
             </div>
 
-            {/* End of Year Videos Button */}
-            <div className="bg-gray-50 rounded-lg p-8">
-              <h3 className="text-3xl font-bold mb-4 text-custom-blue">End of Year Videos</h3>
-              <p className="text-lg mb-6 text-gray-600">
-                Watch our special end of year messages, highlights, and testimonies from the past year.
-              </p>
-              <button 
-                onClick={() => router.push('/end-of-year-videos')}
-                className="bg-[#4EC3E0] text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#3db1d0] transition-colors duration-200"
-              >
-                WATCH VIDEOS
-              </button>
-            </div>
+
           </div>
         </div>
       </section>

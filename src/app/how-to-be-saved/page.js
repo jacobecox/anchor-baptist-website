@@ -130,7 +130,7 @@ export default function HowToBeSavedPage() {
           {/* Reach Out Section */}
           <div className="bg-custom-blue text-white rounded-lg p-8">
             <h2 className="text-3xl font-bold mb-6">Reach Out:</h2>
-            <p className="text-lg">If you would like to know more about how to be saved, and what happens if you don&apos;t trust in Jesus to save you, contact us through this website (form below). We&apos;re more than happy to speak to you through email, phone calls, or one-on-one in person. We&apos;ll sit down with you and answer your questions about the Good News of God&apos;s salvation.</p>
+            <p className="text-lg">If you would like to know more about how to be saved, and what happens if you don&apos;t trust in Jesus to save you, contact us through the form below. We&apos;re more than happy to speak to you through email, phone calls, or one-on-one in person. We&apos;ll sit down with you and answer your questions about the Good News of God&apos;s salvation.</p>
           </div>
 
         </div>
