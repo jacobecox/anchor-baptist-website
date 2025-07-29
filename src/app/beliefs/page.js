@@ -13,7 +13,7 @@ export default function BeliefsPage() {
       </section>
 
       {/* Bible Image - Full Width */}
-      <div className="w-full relative h-80">
+      <div className="w-full relative h-48 md:h-64 lg:h-80">
         <Image
           src="/aaron-burden-cmIqkMPfpMQ-unsplash.jpg"
           alt="Open Bible with Golden Edges"

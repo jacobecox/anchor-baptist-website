@@ -28,7 +28,7 @@ export default function PhotoSlideshow({ images, interval = 5000, height = "400p
   };
 
   return (
-    <div className="relative w-full" style={{ height }}>
+    <div className="relative w-full h-64 md:h-96 lg:h-[700px]" style={{ height: undefined }}>
       {/* Main Image */}
       <div className="w-full h-full relative overflow-hidden bg-black">
         {images.map((image, index) => (
@@ -51,11 +51,11 @@ export default function PhotoSlideshow({ images, interval = 5000, height = "400p
 
       {/* Scripture Overlay */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="text-center">
-          <h2 className="text-6xl md:text-7xl font-bold text-white drop-shadow-2xl mb-4">
+        <div className="text-center px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl mb-2 md:mb-4">
             Serving Together
           </h2>
-          <p className="text-xl md:text-2xl text-white drop-shadow-lg font-medium">
+          <p className="text-base sm:text-lg md:text-2xl lg:text-2xl text-white drop-shadow-lg font-medium">
             &ldquo;O magnify the LORD with me, and let us exalt his name together&rdquo; - Psalm 34:3
           </p>
         </div>

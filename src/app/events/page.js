@@ -144,7 +144,7 @@ export default function EventsPage() {
     
     // Add empty cells for days before the first day of the month
     for (let i = 0; i < startingDayOfWeek; i++) {
-      days.push(<div key={`empty-${i}`} className="p-2 border border-gray-200 bg-gray-50"></div>);
+      days.push(<div key={`empty-${i}`} className="p-3 md:p-2 border border-gray-200 bg-gray-50"></div>);
     }
     
     // Add days of the month
@@ -157,24 +157,24 @@ export default function EventsPage() {
       days.push(
         <div 
           key={day} 
-          className={`p-2 border border-gray-200 min-h-[80px] ${
+          className={`p-3 md:p-2 border border-gray-200 min-h-[120px] md:min-h-[80px] ${
             isToday ? 'bg-calvary-blue text-white' : 
             isPast ? 'bg-gray-100 text-gray-400' : 'bg-white'
           }`}
         >
-          <div className="font-semibold mb-1">{day}</div>
+          <div className="font-semibold mb-2 md:mb-1 text-sm md:text-base">{day}</div>
           {dayEvents.map((event, index) => (
             <div 
               key={index} 
-              className={`text-xs p-1 mb-1 rounded cursor-pointer hover:opacity-80 transition-opacity duration-200 ${
+              className={`text-[10px] md:text-xs p-1 md:p-1 mb-1 md:mb-1 rounded cursor-pointer hover:opacity-80 transition-opacity duration-200 ${
                 isToday ? 'bg-white text-calvary-blue' : 'bg-calvary-blue text-white'
               }`}
               title={`${event.title}${event.event_time ? ` at ${formatTime(event.event_time)}` : ''}`}
               onClick={() => handleEventClick(event)}
             >
-              <div className="font-semibold truncate">{event.title}</div>
+              <div className="font-semibold truncate text-[10px] md:text-xs leading-tight">{event.title}</div>
               {event.event_time && (
-                <div className="text-xs opacity-90">{formatTime(event.event_time)}</div>
+                <div className="text-[8px] md:text-xs opacity-90 leading-tight">{formatTime(event.event_time)}</div>
               )}
             </div>
           ))}
@@ -210,7 +210,7 @@ export default function EventsPage() {
 
       {/* Main Content */}
       <section className="w-full bg-white text-custom-blue py-12">
-        <div className="w-3/4 mx-auto">
+        <div className="w-full px-4 md:w-3/4 md:mx-auto">
           
           {/* View Toggle */}
           <div className="flex justify-center mb-8">
@@ -351,7 +351,7 @@ export default function EventsPage() {
                   <p className="text-xl">Loading events...</p>
                 </div>
               ) : (
-                <div className="bg-white border border-gray-300 rounded-lg p-6">
+                <div className="bg-white border border-gray-300 rounded-lg p-2 md:p-6 w-full">
                   {/* Calendar Header */}
                   <div className="flex justify-between items-center mb-6">
                     <button
@@ -360,7 +360,7 @@ export default function EventsPage() {
                     >
                       ← Previous
                     </button>
-                    <h3 className="text-2xl font-bold text-custom-blue">
+                    <h3 className="text-xl md:text-2xl font-bold text-custom-blue">
                       {selectedMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                     </h3>
                     <button
@@ -372,10 +372,10 @@ export default function EventsPage() {
                   </div>
 
                   {/* Calendar Grid */}
-                  <div className="grid grid-cols-7 gap-1">
+                  <div className="grid grid-cols-7 gap-3 md:gap-1">
                     {/* Day Headers */}
-                    {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-                      <div key={day} className="p-2 text-center font-semibold text-gray-600 bg-gray-50">
+                    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, index) => (
+                      <div key={day + index} className="p-3 md:p-2 text-center font-semibold text-gray-600 bg-gray-50 text-sm md:text-base">
                         {day}
                       </div>
                     ))}

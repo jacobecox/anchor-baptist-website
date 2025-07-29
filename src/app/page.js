@@ -93,7 +93,6 @@ export default function HomePage() {
         <PhotoSlideshow 
           images={slideshowImages}
           interval={5000} // 5 seconds between slides
-          height="700px"
         />
 
         {/* Horizontal Line */}

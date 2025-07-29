@@ -13,7 +13,7 @@ export default function HowToBeSavedPage() {
       </section>
 
       {/* Bible on Beach Image - Full Width */}
-      <div className="w-full relative h-80">
+      <div className="w-full relative h-48 md:h-64 lg:h-80">
         <Image
           src="/beach-1868772.jpg"
           alt="Person praying with Bible on beach"
