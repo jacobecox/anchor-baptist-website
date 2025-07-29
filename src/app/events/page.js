@@ -48,6 +48,8 @@ export default function EventsPage() {
   const [viewMode, setViewMode] = useState('list'); // 'list' or 'calendar'
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [showEventModal, setShowEventModal] = useState(false);
+  const [selectedDayEvents, setSelectedDayEvents] = useState([]);
+  const [showDayModal, setShowDayModal] = useState(false);
 
   // Fetch events
   useEffect(() => {
@@ -163,21 +165,35 @@ export default function EventsPage() {
           }`}
         >
           <div className="font-semibold mb-2 md:mb-1 text-sm md:text-base">{day}</div>
-          {dayEvents.map((event, index) => (
-            <div 
-              key={index} 
-              className={`text-[10px] md:text-xs p-1 md:p-1 mb-1 md:mb-1 rounded cursor-pointer hover:opacity-80 transition-opacity duration-200 ${
-                isToday ? 'bg-white text-calvary-blue' : 'bg-calvary-blue text-white'
-              }`}
-              title={`${event.title}${event.event_time ? ` at ${formatTime(event.event_time)}` : ''}`}
-              onClick={() => handleEventClick(event)}
-            >
-              <div className="font-semibold truncate text-[10px] md:text-xs leading-tight">{event.title}</div>
-              {event.event_time && (
-                <div className="text-[8px] md:text-xs opacity-90 leading-tight">{formatTime(event.event_time)}</div>
-              )}
-            </div>
-          ))}
+          {/* Mobile: Show blue dots for events */}
+          <div className="md:hidden">
+            {dayEvents.length > 0 && (
+              <div 
+                className="w-3 h-3 bg-calvary-blue rounded-full mx-auto cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                title={`${dayEvents.length} event${dayEvents.length > 1 ? 's' : ''} on this day`}
+                onClick={() => handleDayClick(dayEvents)}
+              />
+            )}
+          </div>
+          
+          {/* Desktop: Show full event details */}
+          <div className="hidden md:block">
+            {dayEvents.map((event, index) => (
+              <div 
+                key={index} 
+                className={`text-xs p-1 mb-1 rounded cursor-pointer hover:opacity-80 transition-opacity duration-200 ${
+                  isToday ? 'bg-white text-calvary-blue' : 'bg-calvary-blue text-white'
+                }`}
+                title={`${event.title}${event.event_time ? ` at ${formatTime(event.event_time)}` : ''}`}
+                onClick={() => handleEventClick(event)}
+              >
+                <div className="font-semibold truncate text-xs leading-tight">{event.title}</div>
+                {event.event_time && (
+                  <div className="text-xs opacity-90 leading-tight">{formatTime(event.event_time)}</div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       );
     }
@@ -194,9 +210,19 @@ export default function EventsPage() {
     setShowEventModal(true);
   };
 
+  const handleDayClick = (events) => {
+    setSelectedDayEvents(events);
+    setShowDayModal(true);
+  };
+
   const closeEventModal = () => {
     setShowEventModal(false);
     setSelectedEvent(null);
+  };
+
+  const closeDayModal = () => {
+    setShowDayModal(false);
+    setSelectedDayEvents([]);
   };
 
   return (
@@ -476,6 +502,86 @@ export default function EventsPage() {
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={closeEventModal}
+                  className="bg-calvary-blue text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Day Events Modal for Mobile */}
+      {showDayModal && selectedDayEvents.length > 0 && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-2xl font-bold text-custom-blue">
+                  Events on {formatDate(selectedDayEvents[0].event_date)}
+                </h3>
+                <button
+                  onClick={closeDayModal}
+                  className="text-gray-400 hover:text-gray-600 text-2xl font-bold"
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className="space-y-4">
+                {selectedDayEvents.map((event, index) => (
+                  <div key={`${event.id}-${index}`} className="border border-gray-200 rounded-lg p-4">
+                    <h4 className="text-lg font-semibold text-custom-blue mb-2">
+                      {event.title}
+                      {event.is_recurring_instance && (
+                        <span className="ml-2 text-sm bg-calvary-blue text-white px-2 py-1 rounded">
+                          Recurring
+                        </span>
+                      )}
+                    </h4>
+                    
+                    <div className="space-y-2 text-sm">
+                      {event.event_time && (
+                        <div>
+                          <strong className="text-gray-700">Time:</strong>
+                          <span className="ml-2">{formatTime(event.event_time)}</span>
+                        </div>
+                      )}
+                      
+                      {event.location && (
+                        <div>
+                          <strong className="text-gray-700">Location:</strong>
+                          <span className="ml-2">{event.location}</span>
+                        </div>
+                      )}
+                      
+                      {event.description && (
+                        <div>
+                          <strong className="text-gray-700">Description:</strong>
+                          <p className="mt-1 text-gray-600">{event.description}</p>
+                        </div>
+                      )}
+                      
+                      {event.is_recurring && !event.is_recurring_instance && (
+                        <div className="text-calvary-blue font-semibold">
+                          🔄 {event.recurrence_pattern} event
+                          {event.end_date && ` until ${formatDate(event.end_date)}`}
+                        </div>
+                      )}
+                      {event.is_recurring_instance && (
+                        <div className="text-calvary-blue font-semibold">
+                          🔄 Part of recurring {event.recurrence_pattern} series
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={closeDayModal}
                   className="bg-calvary-blue text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
                 >
                   Close

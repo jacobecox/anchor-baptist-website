@@ -198,12 +198,12 @@ export default function ServiceTimesAdmin() {
       {/* Header */}
       <section className="w-full bg-custom-blue text-white py-8">
         <div className="w-3/4 mx-auto">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
             <div>
               <h1 className="text-4xl font-extrabold mb-2">Service Times Admin</h1>
               <p className="text-lg">Manage your church service times</p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-3">
               <button
                 onClick={() => router.push('/admin/dashboard')}
                 className="bg-white text-custom-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"

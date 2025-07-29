@@ -41,13 +41,13 @@ export default function AdminDashboard() {
       {/* Header */}
       <section className="w-full bg-custom-blue text-white py-8">
         <div className="w-3/4 mx-auto">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
             <div>
               <h1 className="text-4xl font-extrabold mb-2">Admin Dashboard</h1>
               <p className="text-lg">Manage your church website</p>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="text-right">
+            <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
+              <div className="text-left md:text-right">
                 <p className="text-sm text-gray-200">Logged in as</p>
                 <p className="font-semibold">{user?.email}</p>
               </div>
