@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../../../lib/supabase';
 
@@ -8,12 +8,7 @@ export default function AdminDashboard() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Check authentication on component mount
-  useEffect(() => {
-    checkUser();
-  }, []);
-
-  const checkUser = async () => {
+  const checkUser = useCallback(async () => {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
       router.push('/admin');
@@ -21,7 +16,12 @@ export default function AdminDashboard() {
     }
     setUser(user);
     setLoading(false);
-  };
+  }, [router]);
+
+  // Check authentication on component mount
+  useEffect(() => {
+    checkUser();
+  }, [checkUser]);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();

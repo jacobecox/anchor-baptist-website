@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import ContactForm from '../components/ContactForm';
 import { supabase } from '../../lib/supabase';
 
@@ -74,9 +75,11 @@ export default function VisitPage() {
               
               {/* Synagogue Image */}
               <div>
-                <img
+                <Image
                   src="/synagogue.jpg"
                   alt="Congregation B'nai Emet Synagogue"
+                  width={600}
+                  height={400}
                   className="w-full h-[400px] object-cover rounded-lg shadow-lg"
                 />
               </div>

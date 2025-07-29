@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../../../lib/supabase';
 
@@ -15,13 +15,7 @@ export default function ServiceTimesAdmin() {
   });
   const [editingId, setEditingId] = useState(null);
 
-  // Check authentication on component mount
-  useEffect(() => {
-    checkUser();
-    fetchServiceTimes();
-  }, []);
-
-  const checkUser = async () => {
+  const checkUser = useCallback(async () => {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
       router.push('/admin');
@@ -29,7 +23,13 @@ export default function ServiceTimesAdmin() {
     }
     setUser(user);
     setLoading(false);
-  };
+  }, [router]);
+
+  // Check authentication on component mount
+  useEffect(() => {
+    checkUser();
+    fetchServiceTimes();
+  }, [checkUser]);
 
   const fetchServiceTimes = async () => {
     const { data, error } = await supabase

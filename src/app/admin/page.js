@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { supabase } from '../../lib/supabase';
 
 export default function AdminPage() {
@@ -103,12 +104,12 @@ export default function AdminPage() {
           </form>
 
           <div className="mt-8 text-center">
-            <a
+            <Link
               href="/"
               className="text-custom-blue hover:text-slate-700 text-sm font-medium"
             >
               ← Back to Website
-            </a>
+            </Link>
           </div>
         </div>
       </div>
