@@ -43,14 +43,14 @@ export default function WatchPage() {
   return (
     <main className="font-sans">
       {/* Header Section */}
-      <section className="w-full bg-custom-blue text-white py-16">
+      <section className="w-full bg-calvary-blue text-white py-8">
         <div className="w-3/4 mx-auto text-center">
           <h1 className="text-5xl font-extrabold mb-4">WATCH LIVE</h1>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="w-full bg-white text-black">
+      <section className="w-full bg-white text-custom-blue">
         <div className="w-3/4 mx-auto text-center">
           <div className="rounded-lg p-12 mb-12">
             <h2 className="text-4xl font-bold mb-6 text-custom-blue">Watch Our Services Online</h2>
@@ -62,7 +62,7 @@ export default function WatchPage() {
               onClick={handleWatchClick}
               className="bg-[#FF0000] text-white py-6 px-12 rounded-full font-bold text-2xl hover:bg-red-700 transition-colors duration-200 flex items-center justify-center mx-auto gap-3"
             >
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-16 h-16 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
               WATCH ON YOUTUBE

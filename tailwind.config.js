@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'calvary-blue': '#4EC2E6',
-        'custom-blue': '#337b92',
+        'calvary-blue': '#0099cb',
+        'custom-blue': '#003d51',
       },
     },
   },

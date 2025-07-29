@@ -6,7 +6,7 @@ export default function HowToBeSavedPage() {
   return (
     <main className="font-sans">
       {/* Header Section */}
-      <section className="w-full bg-custom-blue text-white py-16">
+      <section className="w-full bg-calvary-blue text-white py-8">
         <div className="w-3/4 mx-auto text-center">
           <h1 className="text-5xl font-extrabold mb-4">HOW TO BE SAVED</h1>
         </div>
@@ -25,7 +25,7 @@ export default function HowToBeSavedPage() {
       </div>
 
       {/* Content Sections */}
-      <section className="w-full bg-white text-black py-8">
+      <section className="w-full bg-white text-custom-blue py-8">
         <div className="w-3/4 mx-auto space-y-8">
           
           {/* 1. God loves you */}

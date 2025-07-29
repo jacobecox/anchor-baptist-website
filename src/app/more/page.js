@@ -8,7 +8,7 @@ export default function MorePage() {
   return (
     <main className="font-sans">
       {/* Header Section */}
-      <section className="w-full bg-custom-blue text-white py-16">
+      <section className="w-full bg-calvary-blue text-white py-8">
         <div className="w-3/4 mx-auto text-center">
           <h1 className="text-5xl font-extrabold mb-4">MORE</h1>
           <p className="text-xl">Additional Resources & Content</p>

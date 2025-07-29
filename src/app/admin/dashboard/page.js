@@ -46,12 +46,18 @@ export default function AdminDashboard() {
               <h1 className="text-4xl font-extrabold mb-2">Admin Dashboard</h1>
               <p className="text-lg">Manage your church website</p>
             </div>
-            <button
-              onClick={handleLogout}
-              className="bg-white text-custom-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
-            >
-              Logout
-            </button>
+            <div className="flex items-center space-x-4">
+              <div className="text-right">
+                <p className="text-sm text-gray-200">Logged in as</p>
+                <p className="font-semibold">{user?.email}</p>
+              </div>
+              <button
+                onClick={handleLogout}
+                className="bg-white text-custom-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </section>

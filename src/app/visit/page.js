@@ -41,16 +41,16 @@ export default function VisitPage() {
   return (
     <main className="font-sans">
       {/* Header Section */}
-      <section className="w-full bg-custom-blue text-white py-16">
+      <section className="w-full bg-calvary-blue text-white py-8">
         <div className="w-3/4 mx-auto text-center">
           <h1 className="text-5xl font-extrabold mb-4">VISIT US</h1>
         </div>
       </section>
 
       {/* Meeting Information Section */}
-      <section className="w-full bg-white text-black py-16">
+      <section className="w-full bg-white text-custom-blue py-16">
         <div className="w-3/4 mx-auto text-center">
-          <div className="text-black rounded-lg p-8 mb-4">
+          <div className="text-custom-blue rounded-lg p-8 mb-4">
             <h2 className="text-3xl font-bold mb-4">We Meet at the Congregation B&apos;nai Emet Synagogue</h2>
             <p className="text-2xl mb-2">9 West Bonita</p>
             <p className="text-2xl mb-6">Simi Valley, CA 93065</p>
@@ -86,24 +86,24 @@ export default function VisitPage() {
       </section>
 
       {/* Service Times Section */}
-      <section className="w-full bg-white text-black pt-0 pb-4">
+      <section className="w-full bg-white text-custom-blue pt-0 pb-4">
         <div className="w-3/4 mx-auto text-center">
           <h2 className="text-4xl font-extrabold mb-8">SERVICE TIMES</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             {loading ? (
               <>
-                <div className="text-black rounded-lg p-6">
+                <div className="text-custom-blue rounded-lg p-6">
                   <h3 className="text-2xl font-bold mb-4">SUNDAY</h3>
                   <p className="text-xl mb-2">Loading...</p>
                 </div>
-                <div className="text-black rounded-lg p-6">
+                <div className="text-custom-blue rounded-lg p-6">
                   <h3 className="text-2xl font-bold mb-4">WEDNESDAY</h3>
                   <p className="text-xl">Loading...</p>
                 </div>
               </>
             ) : Object.keys(groupedServices).length > 0 ? (
               Object.entries(groupedServices).map(([day, services]) => (
-                <div key={day} className="text-black rounded-lg p-6">
+                <div key={day} className="text-custom-blue rounded-lg p-6">
                   <h3 className="text-2xl font-bold mb-4">{day.toUpperCase()}</h3>
                   {services
                     .sort((a, b) => {

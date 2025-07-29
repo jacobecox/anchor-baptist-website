@@ -92,8 +92,11 @@ export default function HomePage() {
         <PhotoSlideshow 
           images={slideshowImages}
           interval={5000} // 5 seconds between slides
-          height="600px"
+          height="700px"
         />
+
+        {/* Horizontal Line */}
+        <div className="w-full h-12 bg-custom-blue"></div>
 
         {/* WHO WE ARE Section */}
         <div className="w-full bg-white text-black flex items-center justify-center pt-14">
@@ -108,7 +111,7 @@ export default function HomePage() {
         </h1>
             <button 
               onClick={() => router.push('/beliefs')}
-              className="bg-[#4EC3E0] text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#3db1d0] transition-colors duration-200"
+              className="bg-calvary-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
             >
           WHAT WE BELIEVE
         </button>
@@ -126,7 +129,7 @@ export default function HomePage() {
               className="object-cover"
             />
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-white/60"></div>
+            <div className="absolute inset-0 bg-white/40"></div>
           </div>
           
           {/* Content */}
@@ -134,13 +137,13 @@ export default function HomePage() {
             <h3 className="text-5xl font-extrabold mb-8 text-white drop-shadow-2xl">WORSHIP WITH US</h3>
             <div className="space-y-4 mb-8">
               {loading ? (
-                <div className="text-white drop-shadow-lg">
-                  <p className="text-xl">Loading service times...</p>
+                <div className="text-white drop-shadow-2xl">
+                  <p className="text-2xl">Loading service times...</p>
                 </div>
               ) : Object.keys(groupedServices).length > 0 ? (
                 Object.entries(groupedServices).map(([day, services]) => (
                   <div key={day}>
-                    <h5 className="text-2xl font-bold mb-2 text-white drop-shadow-lg">{day.toUpperCase()}</h5>
+                    <h5 className="text-3xl font-bold mb-2 text-white drop-shadow-2xl">{day.toUpperCase()}</h5>
                     {services
                       .sort((a, b) => {
                         // Sort Sunday Morning before Sunday Evening
@@ -149,30 +152,30 @@ export default function HomePage() {
                         return 0;
                       })
                       .map((service, index) => (
-                        <p key={index} className="text-xl text-white drop-shadow-lg">
+                        <p key={index} className="text-2xl text-white drop-shadow-2xl">
                           {service.service_name} | {service.time}
                         </p>
                       ))}
                   </div>
                 ))
               ) : (
-                <div className="text-white drop-shadow-lg">
-                  <p className="text-xl">Morning Service | 12pm</p>
-                  <p className="text-xl">Evening Service | 6pm</p>
-                  <p className="text-xl">Wednesday Evening Service | 6:30pm</p>
+                <div className="text-white drop-shadow-2xl">
+                  <p className="text-2xl">Morning Service | 12pm</p>
+                  <p className="text-2xl">Evening Service | 6pm</p>
+                  <p className="text-2xl">Wednesday Evening Service | 6:30pm</p>
                 </div>
               )}
             </div>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button 
                 onClick={() => router.push('/visit')}
-                className="bg-[#4EC3E0] text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#3db1d0] transition-colors duration-200"
+                className="bg-calvary-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
               >
                 VISIT US
               </button>
               <button 
                 onClick={() => router.push('/watch')}
-                className="bg-custom-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-slate-700 transition-colors duration-200"
+                className="bg-custom-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#005a7a] transition-colors duration-200"
               >
                 WATCH ONLINE
               </button>
@@ -189,7 +192,7 @@ export default function HomePage() {
             </p>
             <button 
               onClick={() => router.push('/visit')}
-              className="bg-[#4EC3E0] text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#3db1d0] transition-colors duration-200"
+              className="bg-calvary-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
             >
               VISIT US
             </button>
@@ -235,7 +238,7 @@ export default function HomePage() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-white text-custom-blue py-3 px-8 rounded-full font-semibold text-lg hover:bg-gray-200 transition-colors duration-200"
+                  className="bg-white text-custom-blue py-3 px-8 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-200"
                 >
                   Submit
                 </button>
