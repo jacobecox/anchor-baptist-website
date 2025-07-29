@@ -87,7 +87,9 @@ export default function EventsPage() {
   };
 
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
+    // Ensure the date is treated as local time to avoid timezone issues
+    const [year, month, day] = dateString.split('-').map(Number);
+    return new Date(year, month - 1, day).toLocaleDateString('en-US', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
