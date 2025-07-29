@@ -79,7 +79,12 @@ export default function Navbar() {
                 setTimeout(() => {
                   const contactForm = document.querySelector('[data-contact-form]');
                   if (contactForm) {
-                    contactForm.scrollIntoView({ behavior: 'smooth' });
+                    const headerHeight = 100; // Approximate header height
+                    const elementTop = contactForm.offsetTop - headerHeight;
+                    window.scrollTo({
+                      top: elementTop,
+                      behavior: 'smooth'
+                    });
                   }
                 }, 100);
               }}
@@ -150,7 +155,12 @@ export default function Navbar() {
                 setTimeout(() => {
                   const contactForm = document.querySelector('[data-contact-form]');
                   if (contactForm) {
-                    contactForm.scrollIntoView({ behavior: 'smooth' });
+                    const headerHeight = 100; // Approximate header height
+                    const elementTop = contactForm.offsetTop - headerHeight;
+                    window.scrollTo({
+                      top: elementTop,
+                      behavior: 'smooth'
+                    });
                   }
                 }, 100);
               }}

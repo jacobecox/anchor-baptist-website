@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import PhotoSlideshow from './components/PhotoSlideshow';
+import ContactForm from './components/ContactForm';
 import { supabase } from '../lib/supabase';
 
 export default function HomePage() {
@@ -200,52 +201,14 @@ export default function HomePage() {
         </div>
 
         {/* Contact Form Section */}
-        <div className="w-full bg-custom-blue text-white py-24" data-contact-form>
-          <div className="w-3/4 mx-auto">
-            <p className="text-2xl text-center mb-4">HAVE MORE QUESTIONS?</p>
-            <h3 className="text-7xl font-extrabold text-center mb-4">CONTACT US</h3>
-            <p className="text-lg text-center mb-8">Fill out the form below and we will contact you as soon as possible.</p>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-lg mb-2">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full p-3 rounded-lg bg-white text-black border border-slate-600 focus:border-white focus:outline-none"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-lg mb-2">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full p-3 rounded-lg bg-white text-black border border-slate-600 focus:border-white focus:outline-none"
-                    placeholder="Your email"
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-lg mb-2">Message</label>
-                <textarea
-                  id="message"
-                  rows="4"
-                  className="w-full p-3 rounded-lg bg-white text-black border border-slate-600 focus:border-white focus:outline-none"
-                  placeholder="Your message"
-                ></textarea>
-              </div>
-              <div className="text-center">
-                <button
-                  type="submit"
-                  className="bg-white text-custom-blue py-3 px-8 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-200"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+        <ContactForm 
+          title="CONTACT US"
+          subtitle="Have questions? We'd love to hear from you."
+          backgroundColor="bg-custom-blue"
+          textColor="text-white"
+          buttonColor="bg-white"
+          buttonTextColor="text-custom-blue"
+        />
 
         {/* Church Logo and Contact Info */}
         <div className="w-full bg-custom-blue pt-2 pb-16">
