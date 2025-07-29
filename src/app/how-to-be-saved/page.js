@@ -12,13 +12,13 @@ export default function HowToBeSavedPage() {
         </div>
       </section>
 
-      {/* Bible Wood Image - Full Width */}
+      {/* Bible on Beach Image - Full Width */}
       <div className="w-full relative h-80">
         <Image
-          src="/bible-wood.jpg"
-          alt="Bible on Wood"
+          src="/beach-1868772.jpg"
+          alt="Person praying with Bible on beach"
           fill
-          className="object-cover object-[center_70%]"
+          className="object-cover object-[center_50%]"
           priority
           unoptimized
         />

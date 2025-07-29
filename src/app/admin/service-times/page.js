@@ -2,6 +2,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '../../../lib/supabase';
+import Notification from '../../components/Notification';
+import ConfirmationDialog from '../../components/ConfirmationDialog';
 
 export default function ServiceTimesAdmin() {
   const router = useRouter();
@@ -14,6 +16,14 @@ export default function ServiceTimesAdmin() {
     day_of_week: ''
   });
   const [editingId, setEditingId] = useState(null);
+  const [notification, setNotification] = useState({
+    message: '',
+    title: '',
+    type: 'success',
+    show: false
+  });
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [serviceToDelete, setServiceToDelete] = useState(null);
 
   const checkUser = useCallback(async () => {
     const { data: { user } } = await supabase.auth.getUser();
@@ -50,7 +60,12 @@ export default function ServiceTimesAdmin() {
     // Check if user is authenticated
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
-      alert('You must be logged in to perform this action');
+      setNotification({ 
+        title: 'Authentication Error',
+        message: 'You must be logged in to perform this action', 
+        type: 'error', 
+        show: true 
+      });
       return;
     }
     
@@ -90,12 +105,27 @@ export default function ServiceTimesAdmin() {
     if (error) {
       console.error('Error updating service time:', error);
       if (error.code === '42501') {
-        alert('Permission denied. Please check your Row Level Security settings in Supabase.');
+        setNotification({ 
+          title: 'Permission Error',
+          message: 'Permission denied. Please check your Row Level Security settings in Supabase.', 
+          type: 'error', 
+          show: true 
+        });
       } else {
-        alert('Error updating service time');
+        setNotification({ 
+          title: 'Error',
+          message: 'Error updating service time', 
+          type: 'error', 
+          show: true 
+        });
       }
     } else {
-      alert(editingId ? 'Service time updated successfully!' : 'Service time updated successfully!');
+      setNotification({ 
+        title: 'Success!',
+        message: 'Service time updated successfully!', 
+        type: 'success', 
+        show: true 
+      });
       setFormData({ service_name: '', time: '', day_of_week: '' });
       setEditingId(null);
       fetchServiceTimes();
@@ -112,20 +142,42 @@ export default function ServiceTimesAdmin() {
   };
 
   const handleDelete = async (id) => {
-    if (!confirm('Are you sure you want to delete this service time?')) return;
+    setServiceToDelete(id);
+    setShowConfirmation(true);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (!serviceToDelete) return;
 
     const { error } = await supabase
       .from('service_times')
       .delete()
-      .eq('id', id);
+      .eq('id', serviceToDelete);
 
     if (error) {
       console.error('Error deleting service time:', error);
-      alert('Error deleting service time');
+      setNotification({ 
+        title: 'Error',
+        message: 'Error deleting service time', 
+        type: 'error', 
+        show: true 
+      });
     } else {
-      alert('Service time deleted successfully!');
+      setNotification({ 
+        title: 'Success!',
+        message: 'Service time deleted successfully!', 
+        type: 'success', 
+        show: true 
+      });
       fetchServiceTimes();
     }
+    setShowConfirmation(false);
+    setServiceToDelete(null);
+  };
+
+  const handleCancelDelete = () => {
+    setShowConfirmation(false);
+    setServiceToDelete(null);
   };
 
   const handleLogout = async () => {
@@ -172,9 +224,9 @@ export default function ServiceTimesAdmin() {
       <div className="w-3/4 mx-auto py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
-          {/* Update Service Times Form */}
+          {/* Add Service Times Form */}
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-bold mb-6 text-custom-blue">Update Service Times</h2>
+            <h2 className="text-2xl font-bold mb-6 text-custom-blue">Add Service Time</h2>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -228,7 +280,7 @@ export default function ServiceTimesAdmin() {
                 type="submit"
                 className="w-full bg-custom-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-slate-700 transition-colors duration-200"
               >
-                Update Service Time
+                Add Service Time
               </button>
             </form>
           </div>
@@ -275,6 +327,25 @@ export default function ServiceTimesAdmin() {
           </ul>
         </div>
       </div>
+      {notification.show && (
+        <Notification
+          title={notification.title}
+          message={notification.message}
+          type={notification.type}
+          isVisible={notification.show}
+          onClose={() => setNotification({ ...notification, show: false })}
+        />
+      )}
+             <ConfirmationDialog
+         isVisible={showConfirmation}
+         onConfirm={handleConfirmDelete}
+         onCancel={handleCancelDelete}
+         title="Confirm Deletion"
+         message="Are you sure you want to delete this service time? This action cannot be undone."
+         confirmText="Delete"
+         cancelText="Cancel"
+         type="danger"
+       />
     </main>
   );
 } 

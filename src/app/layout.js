@@ -7,9 +7,9 @@ const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 export const metadata = {
   title: 'Calvary Baptist Church',
   icons: {
-    icon: '/cbsv-logo.jpeg',
-    shortcut: '/cbsv-logo.jpeg',
-    apple: '/cbsv-logo.jpeg',
+    icon: '/CBC square logo no background.png',
+    shortcut: '/CBC square logo no background.png',
+    apple: '/CBC square logo no background.png',
   },
 };
 

@@ -15,10 +15,10 @@ export default function BeliefsPage() {
       {/* Bible Image - Full Width */}
       <div className="w-full relative h-80">
         <Image
-          src="/bible.jpg"
-          alt="Bible"
+          src="/aaron-burden-cmIqkMPfpMQ-unsplash.jpg"
+          alt="Open Bible with Golden Edges"
           fill
-          className="object-cover object-[center_70%]"
+          className="object-cover object-[center_65%]"
           priority
           unoptimized
         />
