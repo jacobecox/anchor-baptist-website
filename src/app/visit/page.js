@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ContactForm from '../components/ContactForm';
+import PageFooter from '../components/PageFooter';
 import { supabase } from '../../lib/supabase';
 
 export default function VisitPage() {
@@ -148,6 +149,9 @@ export default function VisitPage() {
         buttonColor="bg-white"
         buttonTextColor="text-custom-blue"
       />
+
+      {/* Page Footer */}
+      <PageFooter />
     </main>
   );
 } 

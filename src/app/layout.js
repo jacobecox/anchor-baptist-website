@@ -5,7 +5,9 @@ import './globals.css';
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata = {
-  title: 'Calvary Baptist Church',
+  title: 'Calvary Baptist Church Simi Valley - KJV Bible-Believing Baptist Church',
+  description: 'Join us at Calvary Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version (KJV) Bible. Sunday and Wednesday services.',
+  keywords: 'Calvary Baptist Church, Simi Valley church, Baptist church California, KJV Bible, King James Version, Sunday service, Bible-believing church, Simi Valley California',
   icons: {
     icon: '/CBC square logo no background.png',
     shortcut: '/CBC square logo no background.png',

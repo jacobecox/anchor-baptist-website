@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
+import PageFooter from '../components/PageFooter';
 
 // Utility function to generate recurring event instances
 const generateRecurringEvents = (event) => {
@@ -593,6 +594,9 @@ export default function EventsPage() {
           </div>
         </div>
       )}
+
+      {/* Page Footer */}
+      <PageFooter />
     </main>
   );
 } 

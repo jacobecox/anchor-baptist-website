@@ -1,5 +1,6 @@
 'use client'
 import ContactForm from '../components/ContactForm';
+import PageFooter from '../components/PageFooter';
 import Image from 'next/image';
 
 export default function BeliefsPage() {
@@ -128,6 +129,9 @@ export default function BeliefsPage() {
         buttonColor="bg-white"
         buttonTextColor="text-custom-blue"
       />
+
+      {/* Page Footer */}
+      <PageFooter />
     </main>
   );
 } 

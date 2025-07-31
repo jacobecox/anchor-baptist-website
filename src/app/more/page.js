@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation';
 import ContactForm from '../components/ContactForm';
+import PageFooter from '../components/PageFooter';
 
 export default function MorePage() {
   const router = useRouter();
@@ -48,6 +49,9 @@ export default function MorePage() {
         buttonColor="bg-white"
         buttonTextColor="text-custom-blue"
       />
+
+      {/* Page Footer */}
+      <PageFooter />
     </main>
   );
 } 

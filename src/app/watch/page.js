@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import ContactForm from '../components/ContactForm';
+import PageFooter from '../components/PageFooter';
 import { supabase } from '../../lib/supabase';
 
 export default function WatchPage() {
@@ -140,6 +141,9 @@ export default function WatchPage() {
         buttonColor="bg-white"
         buttonTextColor="text-custom-blue"
       />
+
+      {/* Page Footer */}
+      <PageFooter />
     </main>
   );
 } 
