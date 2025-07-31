@@ -80,6 +80,16 @@ self.addEventListener('fetch', (event) => {
     return
   }
 
+  // Skip Next.js image optimization requests in development
+  if (url.pathname.includes('/_next/image') && url.searchParams.has('url')) {
+    // Let these pass through to network without caching
+    event.respondWith(fetch(request).catch(() => {
+      // If fetch fails, return a simple response to prevent errors
+      return new Response('', { status: 404 })
+    }))
+    return
+  }
+
   // Handle API requests (Supabase)
   if (url.pathname.includes('/rest/v1/') || url.pathname.includes('/auth/')) {
     event.respondWith(
@@ -124,22 +134,26 @@ self.addEventListener('fetch', (event) => {
               }
               return response
             })
+            .catch(() => {
+              // Return a simple response to prevent errors
+              return new Response('', { status: 404 })
+            })
         })
     )
     return
   }
 
-        // Skip caching for admin routes to prevent stale data
-      if (url.pathname.startsWith('/admin/')) {
-        event.respondWith(fetch(request))
-        return
-      }
+  // Skip caching for admin routes to prevent stale data
+  if (url.pathname.startsWith('/admin/')) {
+    event.respondWith(fetch(request))
+    return
+  }
 
-      // Skip caching for Google Analytics to prevent CSP issues
-      if (url.hostname === 'www.googletagmanager.com' || url.hostname === 'www.google-analytics.com') {
-        event.respondWith(fetch(request))
-        return
-      }
+  // Skip caching for Google Analytics to prevent CSP issues
+  if (url.hostname === 'www.googletagmanager.com' || url.hostname === 'www.google-analytics.com') {
+    event.respondWith(fetch(request))
+    return
+  }
 
   // Handle navigation requests (pages)
   if (request.mode === 'navigate') {
@@ -188,6 +202,10 @@ self.addEventListener('fetch', (event) => {
                 })
             }
             return response
+          })
+          .catch(() => {
+            // Return a simple response to prevent errors
+            return new Response('', { status: 404 })
           })
       })
   )
