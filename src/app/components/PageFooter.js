@@ -1,6 +1,6 @@
 'use client'
+// Cache bust: 2024-01-01
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { supabase } from '../../lib/supabase';
 
 export default function PageFooter() {
@@ -41,14 +41,11 @@ export default function PageFooter() {
       <div className="w-4/5 md:w-3/4 mx-auto text-center">
         {/* Church Logo */}
         <div className="mb-12">
-          <Image
-            src="/calvary-baptist-logo.png"
+          <img
+            src="/calvary-baptist-logo.jpg"
             alt="Calvary Baptist Church Simi Valley"
-            width={600}
-            height={200}
             className="w-2/3 md:w-1/3 h-auto mx-auto"
-            priority
-            unoptimized
+            loading="eager"
           />
         </div>
 

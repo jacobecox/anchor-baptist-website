@@ -63,7 +63,7 @@ export default function AdminDashboard() {
       </section>
 
       <div className="w-3/4 mx-auto py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           {/* Service Times Management */}
           <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-200">
@@ -107,6 +107,27 @@ export default function AdminDashboard() {
             </div>
           </div>
 
+          {/* Analytics Dashboard */}
+          <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-200">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h2 className="text-2xl font-bold mb-4 text-purple-600">Analytics</h2>
+              <p className="text-gray-600 mb-6">
+                Monitor website performance, user behavior, and Core Web Vitals. Track your SEO improvements.
+              </p>
+              <button
+                onClick={() => router.push('/admin/analytics')}
+                className="bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 w-full"
+              >
+                View Analytics Dashboard {/* Combined Dashboard */}
+              </button>
+            </div>
+          </div>
+
         </div>
 
         {/* Quick Stats */}
@@ -134,6 +155,7 @@ export default function AdminDashboard() {
           <ul className="text-blue-700 space-y-2 text-sm">
             <li>• <strong>Service Times:</strong> Update your regular service schedule</li>
             <li>• <strong>Events Calendar:</strong> Add special events and activities</li>
+            <li>• <strong>Analytics:</strong> Monitor website performance and user behavior</li>
             <li>• <strong>Real-time Updates:</strong> Changes appear immediately on your website</li>
             <li>• <strong>Secure Access:</strong> Only authenticated admins can make changes</li>
           </ul>

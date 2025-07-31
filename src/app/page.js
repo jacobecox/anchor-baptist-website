@@ -1,12 +1,30 @@
 
 'use client'
-import Image from 'next/image';
+// Cache bust: 2024-01-01
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import PhotoSlideshow from './components/PhotoSlideshow';
-import ContactForm from './components/ContactForm';
+import dynamic from 'next/dynamic';
 import PageFooter from './components/PageFooter';
 import { supabase } from '../lib/supabase';
+
+// Lazy load non-critical components
+const PhotoSlideshow = dynamic(() => import('./components/PhotoSlideshow'), {
+  loading: () => <div className="relative w-full h-64 md:h-96 lg:h-[700px] bg-gray-200 flex items-center justify-center">
+    <div className="text-center">
+      <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-600 mb-2 md:mb-4">Serving Together</h2>
+      <p className="text-base sm:text-lg md:text-2xl lg:text-2xl text-gray-500">Loading slideshow...</p>
+    </div>
+  </div>
+});
+
+const ContactForm = dynamic(() => import('./components/ContactForm'), {
+  loading: () => <div className="w-full bg-custom-blue text-white py-16">
+    <div className="w-3/4 mx-auto text-center">
+      <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
+      <p className="text-xl mb-8">Loading contact form...</p>
+    </div>
+  </div>
+});
 
 export default function HomePage() {
   const router = useRouter();
@@ -92,11 +110,11 @@ export default function HomePage() {
         <div className="w-full bg-gray-100 text-white flex items-center justify-center py-24 relative">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
-            <Image
+            <img
               src="/CBSV11.jpg"
-              alt="Bible Study"
-              fill
-              className="object-cover"
+              alt="Calvary Baptist Church worship service - congregation gathered for Bible study and worship in Simi Valley, California"
+              className="object-cover w-full h-full"
+              loading="eager"
             />
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-white/40"></div>

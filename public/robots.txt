@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://calvarybaptistsv.org/sitemap.xml
+
+# Security
+Allow: /.well-known/security.txt
+
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /admin/dashboard/
+Disallow: /admin/events/
+Disallow: /admin/service-times/ 

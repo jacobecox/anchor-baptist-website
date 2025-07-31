@@ -1,9 +1,20 @@
 'use client'
-import ContactForm from '../components/ContactForm';
+import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import PageFooter from '../components/PageFooter';
-import Image from 'next/image';
+
+// Lazy load ContactForm component
+const ContactForm = dynamic(() => import('../components/ContactForm'), {
+  loading: () => <div className="w-full bg-custom-blue text-white py-16">
+    <div className="w-3/4 mx-auto text-center">
+      <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
+      <p className="text-xl mb-8">Loading contact form...</p>
+    </div>
+  </div>
+});
 
 export default function HowToBeSavedPage() {
+  const router = useRouter();
   return (
     <main className="font-sans">
       {/* Header Section */}
@@ -15,13 +26,11 @@ export default function HowToBeSavedPage() {
 
       {/* Bible on Beach Image - Full Width */}
       <div className="w-full relative h-48 md:h-64 lg:h-80">
-        <Image
+        <img
           src="/beach-1868772.jpg"
           alt="Person praying with Bible on beach"
-          fill
-          className="object-cover object-[center_50%]"
-          priority
-          unoptimized
+          className="object-cover object-[center_50%] w-full h-full"
+          loading="eager"
         />
       </div>
 
@@ -134,6 +143,45 @@ export default function HowToBeSavedPage() {
             <p className="text-lg">If you would like to know more about how to be saved, and what happens if you don&apos;t trust in Jesus to save you, contact us through the form below. We&apos;re more than happy to speak to you through email, phone calls, or one-on-one in person. We&apos;ll sit down with you and answer your questions about the Good News of God&apos;s salvation.</p>
           </div>
 
+        </div>
+      </section>
+
+      {/* Next Steps Section */}
+      <section className="w-full bg-gray-50 text-black py-16">
+        <div className="w-3/4 mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8 text-custom-blue">What&apos;s Next?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-xl font-bold mb-4 text-custom-blue">Learn Our Beliefs</h3>
+              <p className="text-gray-600 mb-4">Discover what we believe as a Bible-believing Baptist church and our commitment to the King James Version.</p>
+              <button 
+                onClick={() => router.push('/beliefs')}
+                className="bg-custom-blue text-white py-2 px-4 rounded font-semibold hover:bg-[#005a7a] transition-colors"
+              >
+                Our Beliefs
+              </button>
+            </div>
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-xl font-bold mb-4 text-custom-blue">Visit Our Church</h3>
+              <p className="text-gray-600 mb-4">Join us for worship services where we preach the Gospel and teach from God&apos;s Word.</p>
+              <button 
+                onClick={() => router.push('/visit')}
+                className="bg-custom-blue text-white py-2 px-4 rounded font-semibold hover:bg-[#005a7a] transition-colors"
+              >
+                Plan Your Visit
+              </button>
+            </div>
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-xl font-bold mb-4 text-custom-blue">Watch Online</h3>
+              <p className="text-gray-600 mb-4">Can&apos;t visit in person? Watch our services live or recorded on YouTube.</p>
+              <button 
+                onClick={() => router.push('/watch')}
+                className="bg-custom-blue text-white py-2 px-4 rounded font-semibold hover:bg-[#005a7a] transition-colors"
+              >
+                Watch Services
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 

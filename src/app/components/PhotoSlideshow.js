@@ -1,6 +1,6 @@
 'use client'
+// Cache bust: 2024-01-01
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 export default function PhotoSlideshow({ images, interval = 5000, height = "400px" }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,19 +14,6 @@ export default function PhotoSlideshow({ images, interval = 5000, height = "400p
     return () => clearInterval(timer);
   }, [images.length, interval]);
 
-  // Manual navigation
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
-
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
   return (
     <div className="relative w-full h-64 md:h-96 lg:h-[700px]" style={{ height: undefined }}>
       {/* Main Image */}
@@ -38,12 +25,11 @@ export default function PhotoSlideshow({ images, interval = 5000, height = "400p
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <Image
+            <img
               src={image.src}
               alt={image.alt || `Slide ${index + 1}`}
-              fill
               className="object-cover w-full h-full"
-              priority={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
             />
           </div>
         ))}

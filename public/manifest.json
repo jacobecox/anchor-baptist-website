@@ -1,0 +1,100 @@
+{
+  "name": "Calvary Baptist Church Simi Valley",
+  "short_name": "Calvary Baptist",
+  "description": "Independent, Bible-believing Baptist church in Simi Valley, California using the King James Version (KJV) Bible",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00b3e6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["religion", "community"],
+  "icons": [
+    {
+      "src": "/CBC square logo no background.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/CBC square logo no background.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/calvary-baptist-logo.png",
+      "sizes": "600x200",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/CBSV1.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Calvary Baptist Church Homepage"
+    },
+    {
+      "src": "/CBSV2.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Mobile view of Calvary Baptist Church"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Visit Us",
+      "short_name": "Visit",
+      "description": "Plan your visit to Calvary Baptist Church",
+      "url": "/visit",
+      "icons": [
+        {
+          "src": "/globe.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "What We Believe",
+      "short_name": "Beliefs",
+      "description": "Learn about our beliefs and doctrine",
+      "url": "/beliefs",
+      "icons": [
+        {
+          "src": "/bible-wood.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Watch Live",
+      "short_name": "Watch",
+      "description": "Watch our services online",
+      "url": "/watch",
+      "icons": [
+        {
+          "src": "/file.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://calvarybaptistsv.org"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+} 

@@ -1,7 +1,17 @@
 'use client'
 import { useRouter } from 'next/navigation';
-import ContactForm from '../components/ContactForm';
+import dynamic from 'next/dynamic';
 import PageFooter from '../components/PageFooter';
+
+// Lazy load ContactForm component
+const ContactForm = dynamic(() => import('../components/ContactForm'), {
+  loading: () => <div className="w-full bg-custom-blue text-white py-16">
+    <div className="w-3/4 mx-auto text-center">
+      <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
+      <p className="text-xl mb-8">Loading contact form...</p>
+    </div>
+  </div>
+});
 
 export default function MorePage() {
   const router = useRouter();

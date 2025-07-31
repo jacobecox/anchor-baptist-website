@@ -1,9 +1,9 @@
 // components/Navbar.tsx
+// Cache bust: 2024-01-01
 'use client';
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import Image from 'next/image';
 
 export default function Navbar() {
   const router = useRouter();
@@ -29,14 +29,11 @@ export default function Navbar() {
               onClick={() => router.push('/')}
               className="bg-transparent border-none outline-none p-0"
             >
-              <Image
+              <img
                 src="/CBSV-logo.jpg"
                 alt="Calvary Baptist Church Simi Valley"
-                width={600}
-                height={250}
                 className="w-56 md:w-64 h-auto"
-                priority
-                unoptimized
+                loading="eager"
               />
             </button>
           </div>

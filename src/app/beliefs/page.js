@@ -1,9 +1,20 @@
 'use client'
-import ContactForm from '../components/ContactForm';
+import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 import PageFooter from '../components/PageFooter';
-import Image from 'next/image';
+
+// Lazy load ContactForm component
+const ContactForm = dynamic(() => import('../components/ContactForm'), {
+  loading: () => <div className="w-full bg-custom-blue text-white py-16">
+    <div className="w-3/4 mx-auto text-center">
+      <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
+      <p className="text-xl mb-8">Loading contact form...</p>
+    </div>
+  </div>
+});
 
 export default function BeliefsPage() {
+  const router = useRouter();
   return (
     <main className="font-sans">
       {/* Header Section */}
@@ -15,13 +26,11 @@ export default function BeliefsPage() {
 
       {/* Bible Image - Full Width */}
       <div className="w-full relative h-48 md:h-64 lg:h-80">
-        <Image
+        <img
           src="/aaron-burden-cmIqkMPfpMQ-unsplash.jpg"
           alt="Open Bible with Golden Edges"
-          fill
-          className="object-cover object-[center_65%]"
-          priority
-          unoptimized
+          className="object-cover object-[center_65%] w-full h-full"
+          loading="eager"
         />
       </div>
 
@@ -117,6 +126,45 @@ export default function BeliefsPage() {
             </p>
           </div>
 
+        </div>
+      </section>
+
+      {/* Related Pages Section */}
+      <section className="w-full bg-gray-50 text-black py-16">
+        <div className="w-3/4 mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8 text-custom-blue">Learn More About Our Church</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-xl font-bold mb-4 text-custom-blue">How to Be Saved</h3>
+              <p className="text-gray-600 mb-4">Learn about salvation through faith in Jesus Christ and how to receive eternal life.</p>
+              <button 
+                onClick={() => router.push('/how-to-be-saved')}
+                className="bg-custom-blue text-white py-2 px-4 rounded font-semibold hover:bg-[#005a7a] transition-colors"
+              >
+                Learn More
+              </button>
+            </div>
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-xl font-bold mb-4 text-custom-blue">Visit Us</h3>
+              <p className="text-gray-600 mb-4">Plan your visit to Calvary Baptist Church. Find service times, directions, and what to expect.</p>
+              <button 
+                onClick={() => router.push('/visit')}
+                className="bg-custom-blue text-white py-2 px-4 rounded font-semibold hover:bg-[#005a7a] transition-colors"
+              >
+                Plan Visit
+              </button>
+            </div>
+            <div className="bg-white rounded-lg shadow p-6">
+              <h3 className="text-xl font-bold mb-4 text-custom-blue">Watch Online</h3>
+              <p className="text-gray-600 mb-4">Can&apos;t make it in person? Join us online through our YouTube channel for live services.</p>
+              <button 
+                onClick={() => router.push('/watch')}
+                className="bg-custom-blue text-white py-2 px-4 rounded font-semibold hover:bg-[#005a7a] transition-colors"
+              >
+                Watch Live
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 

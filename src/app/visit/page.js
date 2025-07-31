@@ -1,10 +1,19 @@
 'use client'
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import ContactForm from '../components/ContactForm';
+import dynamic from 'next/dynamic';
 import PageFooter from '../components/PageFooter';
 import { supabase } from '../../lib/supabase';
+
+// Lazy load ContactForm component
+const ContactForm = dynamic(() => import('../components/ContactForm'), {
+  loading: () => <div className="w-full bg-custom-blue text-white py-16">
+    <div className="w-3/4 mx-auto text-center">
+      <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
+      <p className="text-xl mb-8">Loading contact form...</p>
+    </div>
+  </div>
+});
 
 export default function VisitPage() {
   const router = useRouter();
@@ -76,12 +85,11 @@ export default function VisitPage() {
               
               {/* Synagogue Image */}
               <div>
-                <Image
+                <img
                   src="/synagogue.jpg"
-                  alt="Congregation B'nai Emet Synagogue"
-                  width={600}
-                  height={400}
+                  alt="Calvary Baptist Church building exterior - located at 9 West Bonita Drive in Simi Valley, California"
                   className="w-full h-[400px] object-cover rounded-lg shadow-lg"
+                  loading="lazy"
                 />
               </div>
             </div>
