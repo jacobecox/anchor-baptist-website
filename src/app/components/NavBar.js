@@ -4,6 +4,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import OptimizedImage from './OptimizedImage';
 
 export default function Navbar() {
   const router = useRouter();
@@ -29,11 +30,13 @@ export default function Navbar() {
               onClick={() => router.push('/')}
               className="bg-transparent border-none outline-none p-0"
             >
-              <img
+              <OptimizedImage
                 src="/CBSV-logo.jpg"
                 alt="Calvary Baptist Church Simi Valley"
+                width={256}
+                height={64}
                 className="w-56 md:w-64 h-auto"
-                loading="eager"
+                priority={true}
               />
             </button>
           </div>

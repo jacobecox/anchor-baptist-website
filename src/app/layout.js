@@ -8,6 +8,7 @@ import ServiceWorker from './components/ServiceWorker';
 import BundleOptimizer from './components/BundleOptimizer';
 import SecurityMonitor from './components/SecurityMonitor';
 import AdvancedAnalytics from './components/AdvancedAnalytics';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
 import './globals.css';
 
 // Google Analytics Measurement ID
@@ -247,6 +248,7 @@ export default function RootLayout({ children }) {
           <BundleOptimizer />
           <SecurityMonitor />
           <AdvancedAnalytics />
+          <PWAInstallPrompt />
         </ErrorBoundary>
       </body>
     </html>

@@ -1,10 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
-  // Code splitting and performance optimizations
+  images: {
+    // Enable image optimization
+    unoptimized: false,
+    // Allow external domains if needed
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'calvarybaptistsv.org',
+      },
+    ],
+    // Configure image sizes for responsive images
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Set quality for optimized images
+    formats: ['image/webp', 'image/avif'],
+  },
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['react', 'next'],
   },
 
   // Security headers

@@ -11,7 +11,8 @@ const eslintConfig = [...compat.extends("next/core-web-vitals")];
 // Add rule overrides to fix deployment issues
 eslintConfig.push({
   rules: {
-    '@next/next/no-img-element': 'warn', // Change from error to warning
+    // Allow both img and Next.js Image components
+    '@next/next/no-img-element': 'off', // Allow regular img tags
     'react/no-unescaped-entities': 'off', // Disable this rule completely
   },
 });

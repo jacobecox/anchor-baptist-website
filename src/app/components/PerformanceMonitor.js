@@ -9,7 +9,6 @@ export default function PerformanceMonitor() {
       const lcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries()
         const lastEntry = entries[entries.length - 1]
-        console.log('LCP:', lastEntry.startTime)
         
         // Send to analytics if available
         if (window.gtag) {
@@ -26,8 +25,6 @@ export default function PerformanceMonitor() {
       const fidObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries()
         entries.forEach((entry) => {
-          console.log('FID:', entry.processingStart - entry.startTime)
-          
           if (window.gtag) {
             window.gtag('event', 'FID', {
               value: Math.round(entry.processingStart - entry.startTime),
@@ -46,7 +43,6 @@ export default function PerformanceMonitor() {
         entries.forEach((entry) => {
           if (!entry.hadRecentInput) {
             clsValue += entry.value
-            console.log('CLS:', clsValue)
             
             if (window.gtag) {
               window.gtag('event', 'CLS', {
@@ -67,7 +63,6 @@ export default function PerformanceMonitor() {
         const navigation = performance.getEntriesByType('navigation')[0]
         if (navigation) {
           const loadTime = navigation.loadEventEnd - navigation.loadEventStart
-          console.log('Page Load Time:', loadTime)
           
           if (window.gtag) {
             window.gtag('event', 'page_load_time', {

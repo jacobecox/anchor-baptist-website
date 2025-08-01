@@ -2,6 +2,17 @@
 import Script from 'next/script'
 
 export default function GoogleAnalytics({ GA_MEASUREMENT_ID }) {
+  if (!GA_MEASUREMENT_ID) {
+    return null
+  }
+
+  const scriptContent = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA_MEASUREMENT_ID}');
+  `
+
   return (
     <>
       <Script
@@ -10,12 +21,7 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }) {
         async
       />
       <Script id="google-analytics" strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}');
-        `}
+        {scriptContent}
       </Script>
     </>
   )
