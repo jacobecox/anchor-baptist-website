@@ -340,7 +340,7 @@ export default function AdminAnalyticsPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-calvary-blue mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-anchor-red mx-auto mb-4"></div>
           <p className="text-gray-600">Loading analytics dashboard...</p>
         </div>
       </div>

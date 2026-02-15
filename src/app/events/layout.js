@@ -1,30 +1,30 @@
 export const metadata = {
-  title: 'Church Events - Calvary Baptist Church Simi Valley',
-  description: 'Stay updated with upcoming events, special services, and activities at Calvary Baptist Church in Simi Valley, CA. Join us for fellowship and worship.',
+  title: 'Church Events - Anchor Baptist Church Simi Valley',
+  description: 'Stay updated with upcoming events, special services, and activities at Anchor Baptist Church in Simi Valley, CA. Join us for fellowship and worship.',
   keywords: 'church events, Simi Valley church events, Baptist church activities, church calendar, Sunday school, Bible study, church fellowship, Simi Valley California',
   // Open Graph
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://calvarybaptistsv.org/events',
-    siteName: 'Calvary Baptist Church Simi Valley',
-    title: 'Church Events - Calvary Baptist Church Simi Valley',
-    description: 'Stay updated with upcoming events, special services, and activities at Calvary Baptist Church in Simi Valley, CA. Join us for fellowship and worship.',
+    siteName: 'Anchor Baptist Church Simi Valley',
+    title: 'Church Events - Anchor Baptist Church Simi Valley',
+    description: 'Stay updated with upcoming events, special services, and activities at Anchor Baptist Church in Simi Valley, CA. Join us for fellowship and worship.',
     images: [
       {
-        url: 'https://calvarybaptistsv.org/calvary-baptist-logo.png',
+        url: 'https://calvarybaptistsv.org/anchor-baptist-logo.png',
         width: 1200,
         height: 630,
-        alt: 'Calvary Baptist Church Events Calendar',
+        alt: 'Anchor Baptist Church Events Calendar',
       },
     ],
   },
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Church Events - Calvary Baptist Church Simi Valley',
-    description: 'Stay updated with upcoming events, special services, and activities at Calvary Baptist Church in Simi Valley, CA. Join us for fellowship and worship.',
-    images: ['https://calvarybaptistsv.org/calvary-baptist-logo.png'],
+    title: 'Church Events - Anchor Baptist Church Simi Valley',
+    description: 'Stay updated with upcoming events, special services, and activities at Anchor Baptist Church in Simi Valley, CA. Join us for fellowship and worship.',
+    images: ['https://calvarybaptistsv.org/anchor-baptist-logo.png'],
     creator: '@calvarybaptistsv',
   },
   // Canonical URL
@@ -41,12 +41,12 @@ const structuredData = {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/events/#webpage",
       "name": "Church Events",
-      "description": "Stay updated with upcoming events, special services, and activities at Calvary Baptist Church in Simi Valley, CA. Join us for fellowship and worship.",
+      "description": "Stay updated with upcoming events, special services, and activities at Anchor Baptist Church in Simi Valley, CA. Join us for fellowship and worship.",
       "url": "https://calvarybaptistsv.org/events",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://calvarybaptistsv.org/#website",
-        "name": "Calvary Baptist Church Simi Valley",
+        "name": "Anchor Baptist Church Simi Valley",
         "url": "https://calvarybaptistsv.org"
       },
       "about": {
@@ -56,7 +56,7 @@ const structuredData = {
       "mainEntity": {
         "@type": "ItemList",
         "name": "Upcoming Church Events",
-        "description": "Calendar of upcoming events and activities at Calvary Baptist Church",
+        "description": "Calendar of upcoming events and activities at Anchor Baptist Church",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -69,7 +69,7 @@ const structuredData = {
               "endDate": "2024-01-01T13:00:00",
               "location": {
                 "@type": "Place",
-                "name": "Calvary Baptist Church",
+                "name": "Anchor Baptist Church",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "9 West Bonita Drive",

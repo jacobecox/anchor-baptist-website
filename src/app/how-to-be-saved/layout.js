@@ -1,15 +1,15 @@
 export const metadata = {
-  title: 'How to Be Saved - Calvary Baptist Church Simi Valley',
-  description: 'Learn how to be saved through faith in Jesus Christ. Calvary Baptist Church in Simi Valley, CA helps you understand God\'s plan for salvation and eternal life.',
+  title: 'How to Be Saved - Anchor Baptist Church Simi Valley',
+  description: 'Learn how to be saved through faith in Jesus Christ. Anchor Baptist Church in Simi Valley, CA helps you understand God\'s plan for salvation and eternal life.',
   keywords: 'how to be saved, salvation, Jesus Christ, Simi Valley church, eternal life, Baptist church California, born again, faith in Christ',
   // Open Graph
   openGraph: {
     type: 'article',
     locale: 'en_US',
     url: 'https://calvarybaptistsv.org/how-to-be-saved',
-    siteName: 'Calvary Baptist Church Simi Valley',
-    title: 'How to Be Saved - Calvary Baptist Church Simi Valley',
-    description: 'Learn how to be saved through faith in Jesus Christ. Calvary Baptist Church in Simi Valley, CA helps you understand God\'s plan for salvation and eternal life.',
+    siteName: 'Anchor Baptist Church Simi Valley',
+    title: 'How to Be Saved - Anchor Baptist Church Simi Valley',
+    description: 'Learn how to be saved through faith in Jesus Christ. Anchor Baptist Church in Simi Valley, CA helps you understand God\'s plan for salvation and eternal life.',
     images: [
       {
         url: 'https://calvarybaptistsv.org/beach-1868772.jpg',
@@ -22,8 +22,8 @@ export const metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'How to Be Saved - Calvary Baptist Church Simi Valley',
-    description: 'Learn how to be saved through faith in Jesus Christ. Calvary Baptist Church in Simi Valley, CA helps you understand God\'s plan for salvation and eternal life.',
+    title: 'How to Be Saved - Anchor Baptist Church Simi Valley',
+    description: 'Learn how to be saved through faith in Jesus Christ. Anchor Baptist Church in Simi Valley, CA helps you understand God\'s plan for salvation and eternal life.',
     images: ['https://calvarybaptistsv.org/beach-1868772.jpg'],
     creator: '@calvarybaptistsv',
   },
@@ -41,12 +41,12 @@ const structuredData = {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/how-to-be-saved/#webpage",
       "name": "How to Be Saved",
-      "description": "Learn how to be saved through faith in Jesus Christ. Calvary Baptist Church in Simi Valley, CA helps you understand God's plan for salvation and eternal life.",
+      "description": "Learn how to be saved through faith in Jesus Christ. Anchor Baptist Church in Simi Valley, CA helps you understand God's plan for salvation and eternal life.",
       "url": "https://calvarybaptistsv.org/how-to-be-saved",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://calvarybaptistsv.org/#website",
-        "name": "Calvary Baptist Church Simi Valley",
+        "name": "Anchor Baptist Church Simi Valley",
         "url": "https://calvarybaptistsv.org"
       },
       "about": {

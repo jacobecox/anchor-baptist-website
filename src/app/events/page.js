@@ -163,7 +163,7 @@ export default function EventsPage() {
         <div 
           key={day} 
           className={`p-3 md:p-2 border border-gray-200 min-h-[120px] md:min-h-[80px] ${
-            isToday ? 'bg-calvary-blue text-white' : 
+            isToday ? 'bg-anchor-red text-white' : 
             isPast ? 'bg-gray-100 text-gray-400' : 'bg-white'
           }`}
         >
@@ -172,7 +172,7 @@ export default function EventsPage() {
           <div className="md:hidden">
             {dayEvents.length > 0 && (
               <div 
-                className="w-3 h-3 bg-calvary-blue rounded-full mx-auto cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                className="w-3 h-3 bg-anchor-red rounded-full mx-auto cursor-pointer hover:opacity-80 transition-opacity duration-200"
                 title={`${dayEvents.length} event${dayEvents.length > 1 ? 's' : ''} on this day`}
                 onClick={() => handleDayClick(dayEvents)}
               />
@@ -185,7 +185,7 @@ export default function EventsPage() {
               <div 
                 key={index} 
                 className={`text-xs p-1 mb-1 rounded cursor-pointer hover:opacity-80 transition-opacity duration-200 ${
-                  isToday ? 'bg-white text-calvary-blue' : 'bg-calvary-blue text-white'
+                  isToday ? 'bg-white text-anchor-red' : 'bg-anchor-red text-white'
                 }`}
                 title={`${event.title}${event.event_time ? ` at ${formatTime(event.event_time)}` : ''}`}
                 onClick={() => handleEventClick(event)}
@@ -231,7 +231,7 @@ export default function EventsPage() {
   return (
     <main className="font-sans">
       {/* Header Section */}
-      <section className="w-full bg-calvary-blue text-white py-8">
+      <section className="w-full bg-anchor-red text-white py-8">
         <div className="w-3/4 mx-auto text-center">
           <h1 className="text-5xl font-extrabold mb-4">EVENTS</h1>
         </div>
@@ -248,7 +248,7 @@ export default function EventsPage() {
                 onClick={() => setViewMode('list')}
                 className={`px-6 py-2 rounded-md font-semibold transition-colors duration-200 ${
                   viewMode === 'list' 
-                    ? 'bg-calvary-blue text-white' 
+                    ? 'bg-anchor-red text-white' 
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -258,7 +258,7 @@ export default function EventsPage() {
                 onClick={() => setViewMode('calendar')}
                 className={`px-6 py-2 rounded-md font-semibold transition-colors duration-200 ${
                   viewMode === 'calendar' 
-                    ? 'bg-calvary-blue text-white' 
+                    ? 'bg-anchor-red text-white' 
                     : 'text-gray-600 hover:text-gray-800'
                 }`}
               >
@@ -285,13 +285,13 @@ export default function EventsPage() {
                 ) : (
                   <div className="space-y-6">
                     {upcomingEvents.map((event, index) => (
-                      <div key={`${event.id}-${index}`} className="bg-gray-50 rounded-lg p-6 border-l-4 border-calvary-blue">
+                      <div key={`${event.id}-${index}`} className="bg-gray-50 rounded-lg p-6 border-l-4 border-anchor-red">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                           <div className="flex-1">
                             <h3 className="text-2xl font-bold text-custom-blue mb-2">
                               {event.title}
                               {event.is_recurring_instance && (
-                                <span className="ml-2 text-sm bg-calvary-blue text-white px-2 py-1 rounded">
+                                <span className="ml-2 text-sm bg-anchor-red text-white px-2 py-1 rounded">
                                   Recurring
                                 </span>
                               )}
@@ -316,13 +316,13 @@ export default function EventsPage() {
                                 </p>
                               )}
                               {event.is_recurring && !event.is_recurring_instance && (
-                                <p className="text-lg text-calvary-blue font-semibold">
+                                <p className="text-lg text-anchor-red font-semibold">
                                   🔄 Recurring {event.recurrence_pattern} event
                                   {event.end_date && ` until ${formatDate(event.end_date)}`}
                                 </p>
                               )}
                               {event.is_recurring_instance && (
-                                <p className="text-lg text-calvary-blue font-semibold">
+                                <p className="text-lg text-anchor-red font-semibold">
                                   🔄 Part of recurring {event.recurrence_pattern} series
                                 </p>
                               )}
@@ -418,7 +418,7 @@ export default function EventsPage() {
           )}
 
           {/* Call to Action */}
-          <div className="mt-12 text-center bg-calvary-blue text-white rounded-lg p-8">
+          <div className="mt-12 text-center bg-anchor-red text-white rounded-lg p-8">
             <h3 className="text-3xl font-bold mb-4">Stay Connected</h3>
             <p className="text-xl mb-6">
               Don&apos;t miss out on our upcoming events! Join us for fellowship, worship, and community.
@@ -426,7 +426,7 @@ export default function EventsPage() {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button 
                 onClick={() => window.location.href = '/visit'}
-                className="bg-white text-calvary-blue px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-anchor-red px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-200"
               >
                 VISIT US
               </button>
@@ -486,7 +486,7 @@ export default function EventsPage() {
                 {selectedEvent.is_recurring && !selectedEvent.is_recurring_instance && (
                   <div>
                     <strong className="text-gray-700">Recurring:</strong>
-                    <p className="text-lg text-calvary-blue font-semibold">
+                    <p className="text-lg text-anchor-red font-semibold">
                       🔄 {selectedEvent.recurrence_pattern} event
                       {selectedEvent.end_date && ` until ${formatDate(selectedEvent.end_date)}`}
                     </p>
@@ -495,7 +495,7 @@ export default function EventsPage() {
                 {selectedEvent.is_recurring_instance && (
                   <div>
                     <strong className="text-gray-700">Recurring:</strong>
-                    <p className="text-lg text-calvary-blue font-semibold">
+                    <p className="text-lg text-anchor-red font-semibold">
                       🔄 Part of recurring {selectedEvent.recurrence_pattern} series
                     </p>
                   </div>
@@ -505,7 +505,7 @@ export default function EventsPage() {
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={closeEventModal}
-                  className="bg-calvary-blue text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
+                  className="bg-anchor-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
                 >
                   Close
                 </button>
@@ -538,7 +538,7 @@ export default function EventsPage() {
                     <h4 className="text-lg font-semibold text-custom-blue mb-2">
                       {event.title}
                       {event.is_recurring_instance && (
-                        <span className="ml-2 text-sm bg-calvary-blue text-white px-2 py-1 rounded">
+                        <span className="ml-2 text-sm bg-anchor-red text-white px-2 py-1 rounded">
                           Recurring
                         </span>
                       )}
@@ -567,13 +567,13 @@ export default function EventsPage() {
                       )}
                       
                       {event.is_recurring && !event.is_recurring_instance && (
-                        <div className="text-calvary-blue font-semibold">
+                        <div className="text-anchor-red font-semibold">
                           🔄 {event.recurrence_pattern} event
                           {event.end_date && ` until ${formatDate(event.end_date)}`}
                         </div>
                       )}
                       {event.is_recurring_instance && (
-                        <div className="text-calvary-blue font-semibold">
+                        <div className="text-anchor-red font-semibold">
                           🔄 Part of recurring {event.recurrence_pattern} series
                         </div>
                       )}
@@ -585,7 +585,7 @@ export default function EventsPage() {
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={closeDayModal}
-                  className="bg-calvary-blue text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
+                  className="bg-anchor-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
                 >
                   Close
                 </button>

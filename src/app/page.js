@@ -1,14 +1,22 @@
-
 'use client'
-// Cache bust: 2024-01-01
 import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import PageFooter from './components/PageFooter';
-import { supabase } from '../lib/supabase';
 
 // Lazy load non-critical components
-const PhotoSlideshow = dynamic(() => import('./components/PhotoSlideshow'), {
+const PhotoSlideshow = dynamic(() => import('./components/PhotoSlideshow').catch((error) => {
+  console.warn('Failed to load PhotoSlideshow component:', error);
+  const PhotoSlideshowFallback = () => (
+    <div className="relative w-full h-64 md:h-96 lg:h-[700px] bg-gray-200 flex items-center justify-center">
+      <div className="text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-600 mb-2 md:mb-4">Serving Together</h2>
+        <p className="text-base sm:text-lg md:text-2xl lg:text-2xl text-gray-500">Slideshow unavailable</p>
+      </div>
+    </div>
+  );
+  PhotoSlideshowFallback.displayName = 'PhotoSlideshowFallback';
+  return PhotoSlideshowFallback;
+}), {
   loading: () => <div className="relative w-full h-64 md:h-96 lg:h-[700px] bg-gray-200 flex items-center justify-center">
     <div className="text-center">
       <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-600 mb-2 md:mb-4">Serving Together</h2>
@@ -17,7 +25,19 @@ const PhotoSlideshow = dynamic(() => import('./components/PhotoSlideshow'), {
   </div>
 });
 
-const ContactForm = dynamic(() => import('./components/ContactForm'), {
+const ContactForm = dynamic(() => import('./components/ContactForm').catch((error) => {
+  console.warn('Failed to load ContactForm component:', error);
+  const ContactFormFallback = () => (
+    <div className="w-full bg-custom-blue text-white py-16">
+      <div className="w-3/4 mx-auto text-center">
+        <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
+        <p className="text-xl mb-8">Contact form unavailable</p>
+      </div>
+    </div>
+  );
+  ContactFormFallback.displayName = 'ContactFormFallback';
+  return ContactFormFallback;
+}), {
   loading: () => <div className="w-full bg-custom-blue text-white py-16">
     <div className="w-3/4 mx-auto text-center">
       <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
@@ -32,44 +52,44 @@ export default function HomePage() {
   // Define your slideshow images here
   const slideshowImages = [
     {
-      src: "/CBSV1.jpg",
-      alt: "Calvary Baptist Church Service"
+      src: "/ABCSV1.jpg",
+      alt: "Anchor Baptist Church Service"
     },
     {
-      src: "/CBSV2.jpg",
-      alt: "Calvary Baptist Church Gathering"
+      src: "/ABCSV2.jpg",
+      alt: "Anchor Baptist Church Gathering"
     },
     {
-      src: "/CBSV3.jpg",
-      alt: "Calvary Baptist Church Worship"
+      src: "/ABCSV3.jpg",
+      alt: "Anchor Baptist Church Worship"
     },
     {
-      src: "/CBSV4.jpg",
-      alt: "Calvary Baptist Church Community"
+      src: "/ABCSV4.jpg",
+      alt: "Anchor Baptist Church Community"
     },
     {
-      src: "/CBSV5.jpg",
-      alt: "Calvary Baptist Church Speaker"
+      src: "/ABCSV5.jpg",
+      alt: "Anchor Baptist Church Speaker"
     },
     {
-      src: "/CBSV6.jpg",
-      alt: "Calvary Baptist Church Congregation"
+      src: "/ABCSV6.jpg",
+      alt: "Anchor Baptist Church Congregation"
     },
     {
-      src: "/CBSV7.jpg",
-      alt: "Calvary Baptist Church Fellowship"
+      src: "/ABCSV7.jpg",
+      alt: "Anchor Baptist Church Fellowship"
     },
     {
-      src: "/CBSV8.jpg",
-      alt: "Calvary Baptist Church Members"
+      src: "/ABCSV8.jpg",
+      alt: "Anchor Baptist Church Members"
     },
     {
-      src: "/CBSV9.jpg",
-      alt: "Calvary Baptist Church Service"
+      src: "/ABCSV9.jpg",
+      alt: "Anchor Baptist Church Service"
     },
     {
-      src: "/CBSV10.jpg",
-      alt: "Calvary Baptist Church Community"
+      src: "/ABCSV10.jpg",
+      alt: "Anchor Baptist Church Community"
     }
   ];
 
@@ -95,11 +115,11 @@ export default function HomePage() {
         <div className="w-full flex items-center justify-center pt-8 pb-12 bg-white">
           <div className="w-3/4 md:w-1/2 text-center">
             <h1 className="text-2xl mb-4 text-gray-600">
-          Calvary Baptist Church is an independent, Bible-believing, Baptist church located in beautiful Simi Valley, California.
+          Anchor Baptist Church is an independent, Bible-believing, Baptist church located in beautiful Simi Valley, California.
         </h1>
             <button 
               onClick={() => router.push('/beliefs')}
-              className="bg-calvary-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
+              className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
             >
           WHAT WE BELIEVE
         </button>
@@ -111,10 +131,10 @@ export default function HomePage() {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src="/CBSV11.jpg"
-              alt="Calvary Baptist Church worship service - congregation gathered for Bible study and worship in Simi Valley, California"
+              src="/ABCSV11.jpg"
+              alt="Anchor Baptist Church worship service - congregation gathered for Bible study and worship in Simi Valley, California"
               className="object-cover w-full h-full"
-              loading="eager"
+              loading="lazy"
             />
             {/* Overlay for better text readability */}
             <div className="absolute inset-0 bg-white/40"></div>
@@ -137,7 +157,7 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button 
                 onClick={() => router.push('/visit')}
-                className="bg-calvary-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
+                className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
               >
                 VISIT US
               </button>
@@ -156,11 +176,11 @@ export default function HomePage() {
           <div className="w-3/4 md:w-1/2 text-center">
             <h3 className="text-5xl font-extrabold mb-4 text-custom-blue">BRING YOUR FAMILY</h3>
             <p className="text-2xl mb-6 text-gray-600">
-              Our friendly environment at Calvary welcomes you and your family to worship with us this Sunday!
+              Our friendly environment at Anchor Baptist welcomes you and your family to worship with us this Sunday!
             </p>
             <button 
               onClick={() => router.push('/visit')}
-              className="bg-calvary-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
+              className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
             >
               VISIT US
             </button>

@@ -335,7 +335,7 @@ export default function AdminEventsPage() {
             });
             setShowForm(true);
           }}
-          className="bg-calvary-blue text-white px-6 py-3 rounded-lg font-semibold mb-6 hover:bg-[#00b3e6] transition-colors duration-200"
+          className="bg-anchor-red text-white px-6 py-3 rounded-lg font-semibold mb-6 hover:bg-[#00b3e6] transition-colors duration-200"
         >
           Add New Event
         </button>
@@ -441,7 +441,7 @@ export default function AdminEventsPage() {
               <div className="flex space-x-4">
                 <button
                   type="submit"
-                  className="bg-calvary-blue text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
+                  className="bg-anchor-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
                 >
                   {editingEvent ? 'Update Event' : 'Add Event'}
                 </button>
@@ -476,7 +476,7 @@ export default function AdminEventsPage() {
                       <h3 className="text-xl font-semibold text-custom-blue mb-2">
                         {event.title}
                         {event.is_recurring_instance && (
-                          <span className="ml-2 text-sm bg-calvary-blue text-white px-2 py-1 rounded">
+                          <span className="ml-2 text-sm bg-anchor-red text-white px-2 py-1 rounded">
                             Recurring Instance
                           </span>
                         )}
@@ -490,7 +490,7 @@ export default function AdminEventsPage() {
                           <p><strong>Recurring:</strong> {event.recurrence_pattern} {event.end_date && `until ${formatDate(event.end_date)}`}</p>
                         )}
                         {event.is_recurring_instance && (
-                          <p className="text-calvary-blue font-semibold">
+                          <p className="text-anchor-red font-semibold">
                             🔄 Part of recurring {event.recurrence_pattern} series
                           </p>
                         )}
@@ -501,7 +501,7 @@ export default function AdminEventsPage() {
                         <>
                           <button
                             onClick={() => handleEdit(event)}
-                            className="bg-calvary-blue text-white px-4 py-2 rounded-lg text-sm hover:bg-[#00b3e6] transition-colors duration-200"
+                            className="bg-anchor-red text-white px-4 py-2 rounded-lg text-sm hover:bg-[#00b3e6] transition-colors duration-200"
                           >
                             Edit
                           </button>

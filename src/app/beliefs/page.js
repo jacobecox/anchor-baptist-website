@@ -18,7 +18,7 @@ export default function BeliefsPage() {
   return (
     <main className="font-sans">
       {/* Header Section */}
-      <section className="w-full bg-calvary-blue text-white py-8">
+      <section className="w-full bg-anchor-red text-white py-8">
         <div className="w-3/4 mx-auto text-center">
           <h1 className="text-5xl font-extrabold mb-4">WHAT WE BELIEVE</h1>
         </div>
@@ -42,7 +42,7 @@ export default function BeliefsPage() {
           <div className="bg-gray-50 rounded-lg p-8">
             <h2 className="text-2xl font-bold mb-4 text-custom-blue">We Believe...</h2>
             <p className="text-lg leading-relaxed">
-              that the whole Bible from Genesis 1:1 to Revelation 22:21, is the verbally inspired and infallible Word of God. We believe that God has perfectly preserved His Word for us today. The King James Version is the only faithful English translation of the preserved Greek and Hebrew texts, and is the only translation used by Calvary Baptist Church.
+              that the whole Bible from Genesis 1:1 to Revelation 22:21, is the verbally inspired and infallible Word of God. We believe that God has perfectly preserved His Word for us today. The King James Version is the only faithful English translation of the preserved Greek and Hebrew texts, and is the only translation used by Anchor Baptist Church.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ export default function BeliefsPage() {
             </div>
             <div className="bg-white rounded-lg shadow p-6">
               <h3 className="text-xl font-bold mb-4 text-custom-blue">Visit Us</h3>
-              <p className="text-gray-600 mb-4">Plan your visit to Calvary Baptist Church. Find service times, directions, and what to expect.</p>
+              <p className="text-gray-600 mb-4">Plan your visit to Anchor Baptist Church. Find service times, directions, and what to expect.</p>
               <button 
                 onClick={() => router.push('/visit')}
                 className="bg-custom-blue text-white py-2 px-4 rounded font-semibold hover:bg-[#005a7a] transition-colors"

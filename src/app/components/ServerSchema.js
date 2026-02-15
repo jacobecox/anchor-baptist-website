@@ -6,17 +6,17 @@ export default function ServerSchema({ pageType = 'default' }) {
       {
         "@type": "Organization",
         "@id": "https://calvarybaptistsv.org/#organization",
-        "name": "Calvary Baptist Church",
-        "alternateName": "CBC Simi Valley",
+        "name": "Anchor Baptist Church",
+        "alternateName": "ABC Simi Valley",
         "description": "Independent, Bible-believing Baptist church in Simi Valley, California using the King James Version (KJV) Bible",
         "url": "https://calvarybaptistsv.org",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://calvarybaptistsv.org/calvary-baptist-logo.jpg",
+          "url": "https://calvarybaptistsv.org/anchor-baptist-logo.jpg",
           "width": 600,
           "height": 200
         },
-        "image": "https://calvarybaptistsv.org/calvary-baptist-logo.jpg",
+        "image": "https://calvarybaptistsv.org/anchor-baptist-logo.jpg",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "9 West Bonita Drive",
@@ -52,7 +52,7 @@ export default function ServerSchema({ pageType = 'default' }) {
       {
         "@type": "LocalBusiness",
         "@id": "https://calvarybaptistsv.org/#localbusiness",
-        "name": "Calvary Baptist Church",
+        "name": "Anchor Baptist Church",
         "description": "Independent, Bible-believing Baptist church in Simi Valley, CA using the King James Version (KJV) Bible",
         "url": "https://calvarybaptistsv.org",
         "telephone": "+1-805-000-0000",
@@ -78,8 +78,8 @@ export default function ServerSchema({ pageType = 'default' }) {
         "priceRange": "Free",
         "paymentAccepted": "Donation",
         "currenciesAccepted": "USD",
-        "image": "https://calvarybaptistsv.org/calvary-baptist-logo.png",
-        "logo": "https://calvarybaptistsv.org/calvary-baptist-logo.png",
+        "image": "https://calvarybaptistsv.org/anchor-baptist-logo.png",
+        "logo": "https://calvarybaptistsv.org/anchor-baptist-logo.png",
         "sameAs": [
           "https://www.facebook.com/profile.php?id=100081858694086",
           "https://www.youtube.com/@calvarybaptistchurchofsimi2174"
@@ -131,7 +131,7 @@ export default function ServerSchema({ pageType = 'default' }) {
     'how-to-be-saved': {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/how-to-be-saved/#webpage",
-      "name": "How to Be Saved - Calvary Baptist Church",
+      "name": "How to Be Saved - Anchor Baptist Church",
       "description": "Learn how to be saved and receive eternal life through Jesus Christ. Step-by-step guide to salvation.",
       "url": "https://calvarybaptistsv.org/how-to-be-saved",
       "isPartOf": {
@@ -167,7 +167,7 @@ export default function ServerSchema({ pageType = 'default' }) {
     'beliefs': {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/beliefs/#webpage",
-      "name": "What We Believe - Calvary Baptist Church",
+      "name": "What We Believe - Anchor Baptist Church",
       "description": "Learn about our core beliefs as an independent, Bible-believing Baptist church using the King James Version.",
       "url": "https://calvarybaptistsv.org/beliefs",
       "isPartOf": {
@@ -182,8 +182,8 @@ export default function ServerSchema({ pageType = 'default' }) {
     'visit': {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/visit/#webpage",
-      "name": "Visit Us - Calvary Baptist Church",
-      "description": "Plan your visit to Calvary Baptist Church in Simi Valley. Service times, directions, and what to expect.",
+      "name": "Visit Us - Anchor Baptist Church",
+      "description": "Plan your visit to Anchor Baptist Church in Simi Valley. Service times, directions, and what to expect.",
       "url": "https://calvarybaptistsv.org/visit",
       "isPartOf": {
         "@type": "WebSite",
@@ -191,14 +191,14 @@ export default function ServerSchema({ pageType = 'default' }) {
       },
       "about": {
         "@type": "Place",
-        "name": "Calvary Baptist Church"
+        "name": "Anchor Baptist Church"
       }
     },
     'watch': {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/watch/#webpage",
-      "name": "Watch Live - Calvary Baptist Church",
-      "description": "Watch live services and sermons from Calvary Baptist Church in Simi Valley.",
+      "name": "Watch Live - Anchor Baptist Church",
+      "description": "Watch live services and sermons from Anchor Baptist Church in Simi Valley.",
       "url": "https://calvarybaptistsv.org/watch",
       "isPartOf": {
         "@type": "WebSite",
@@ -212,8 +212,8 @@ export default function ServerSchema({ pageType = 'default' }) {
     'events': {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/events/#webpage",
-      "name": "Events - Calvary Baptist Church",
-      "description": "Upcoming events and activities at Calvary Baptist Church in Simi Valley.",
+      "name": "Events - Anchor Baptist Church",
+      "description": "Upcoming events and activities at Anchor Baptist Church in Simi Valley.",
       "url": "https://calvarybaptistsv.org/events",
       "isPartOf": {
         "@type": "WebSite",
@@ -227,8 +227,8 @@ export default function ServerSchema({ pageType = 'default' }) {
     'more': {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/more/#webpage",
-      "name": "More Information - Calvary Baptist Church",
-      "description": "Additional resources and information about Calvary Baptist Church in Simi Valley.",
+      "name": "More Information - Anchor Baptist Church",
+      "description": "Additional resources and information about Anchor Baptist Church in Simi Valley.",
       "url": "https://calvarybaptistsv.org/more",
       "isPartOf": {
         "@type": "WebSite",
@@ -245,12 +245,12 @@ export default function ServerSchema({ pageType = 'default' }) {
       {
         "@type": "WebSite",
         "@id": "https://calvarybaptistsv.org/#website",
-        "name": "Calvary Baptist Church Simi Valley",
+        "name": "Anchor Baptist Church Simi Valley",
         "url": "https://calvarybaptistsv.org",
         "description": "Independent, Bible-believing Baptist church in Simi Valley, CA using the King James Version (KJV) Bible",
         "publisher": {
           "@type": "Organization",
-          "name": "Calvary Baptist Church"
+          "name": "Anchor Baptist Church"
         },
         "potentialAction": {
           "@type": "SearchAction",
@@ -261,8 +261,8 @@ export default function ServerSchema({ pageType = 'default' }) {
       pageSchemas[pageType] || {
         "@type": "WebPage",
         "@id": "https://calvarybaptistsv.org/#webpage",
-        "name": "Calvary Baptist Church Simi Valley - Home",
-        "description": "Welcome to Calvary Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version (KJV) Bible.",
+        "name": "Anchor Baptist Church Simi Valley - Home",
+        "description": "Welcome to Anchor Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version (KJV) Bible.",
         "url": "https://calvarybaptistsv.org",
         "isPartOf": {
           "@type": "WebSite",

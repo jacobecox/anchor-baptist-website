@@ -42,8 +42,8 @@ export default function PageFooter() {
         {/* Church Logo */}
         <div className="mb-12">
           <img
-            src="/calvary-baptist-logo.jpg"
-            alt="Calvary Baptist Church Simi Valley"
+            src="/anchor-baptist-logo.jpg"
+            alt="Anchor Baptist Church Simi Valley"
             className="w-2/3 md:w-1/3 h-auto mx-auto"
             loading="eager"
           />

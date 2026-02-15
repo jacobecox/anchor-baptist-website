@@ -1,15 +1,15 @@
 export const metadata = {
-  title: 'What We Believe - Calvary Baptist Church Simi Valley',
-  description: 'Discover the core beliefs and doctrines of Calvary Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version.',
+  title: 'What We Believe - Anchor Baptist Church Simi Valley',
+  description: 'Discover the core beliefs and doctrines of Anchor Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version.',
   keywords: 'Baptist beliefs, church doctrine, Simi Valley church, KJV Bible, independent Baptist, Bible-believing church, Christian beliefs, Baptist church California',
   // Open Graph
   openGraph: {
     type: 'article',
     locale: 'en_US',
     url: 'https://calvarybaptistsv.org/beliefs',
-    siteName: 'Calvary Baptist Church Simi Valley',
-    title: 'What We Believe - Calvary Baptist Church Simi Valley',
-    description: 'Discover the core beliefs and doctrines of Calvary Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version.',
+    siteName: 'Anchor Baptist Church Simi Valley',
+    title: 'What We Believe - Anchor Baptist Church Simi Valley',
+    description: 'Discover the core beliefs and doctrines of Anchor Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version.',
     images: [
       {
         url: 'https://calvarybaptistsv.org/aaron-burden-cmIqkMPfpMQ-unsplash.jpg',
@@ -22,8 +22,8 @@ export const metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'What We Believe - Calvary Baptist Church Simi Valley',
-    description: 'Discover the core beliefs and doctrines of Calvary Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version.',
+    title: 'What We Believe - Anchor Baptist Church Simi Valley',
+    description: 'Discover the core beliefs and doctrines of Anchor Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version.',
     images: ['https://calvarybaptistsv.org/aaron-burden-cmIqkMPfpMQ-unsplash.jpg'],
     creator: '@calvarybaptistsv',
   },
@@ -41,12 +41,12 @@ const structuredData = {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/beliefs/#webpage",
       "name": "What We Believe",
-      "description": "Discover the core beliefs and doctrines of Calvary Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version.",
+      "description": "Discover the core beliefs and doctrines of Anchor Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version.",
       "url": "https://calvarybaptistsv.org/beliefs",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://calvarybaptistsv.org/#website",
-        "name": "Calvary Baptist Church Simi Valley",
+        "name": "Anchor Baptist Church Simi Valley",
         "url": "https://calvarybaptistsv.org"
       },
       "about": {

@@ -52,7 +52,7 @@ export default function VisitPage() {
   return (
     <main className="font-sans">
       {/* Header Section */}
-      <section className="w-full bg-calvary-blue text-white py-8">
+      <section className="w-full bg-anchor-red text-white py-8">
         <div className="w-3/4 mx-auto text-center">
           <h1 className="text-5xl font-extrabold mb-4">VISIT US</h1>
         </div>
@@ -78,7 +78,7 @@ export default function VisitPage() {
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Calvary Baptist Church Location"
+                  title="Anchor Baptist Church Location"
                   className="rounded-lg shadow-lg"
                 ></iframe>
               </div>
@@ -87,7 +87,7 @@ export default function VisitPage() {
               <div>
                 <img
                   src="/synagogue.jpg"
-                  alt="Calvary Baptist Church building exterior - located at 9 West Bonita Drive in Simi Valley, California"
+                  alt="Anchor Baptist Church building exterior - located at 9 West Bonita Drive in Simi Valley, California"
                   className="w-full h-[400px] object-cover rounded-lg shadow-lg"
                   loading="lazy"
                 />

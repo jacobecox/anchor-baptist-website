@@ -18,7 +18,7 @@ export default function HowToBeSavedPage() {
   return (
     <main className="font-sans">
       {/* Header Section */}
-      <section className="w-full bg-calvary-blue text-white py-8">
+      <section className="w-full bg-anchor-red text-white py-8">
         <div className="w-3/4 mx-auto text-center">
           <h1 className="text-5xl font-extrabold mb-4">HOW TO BE SAVED</h1>
         </div>

@@ -19,7 +19,7 @@ export default function MorePage() {
   return (
     <main className="font-sans">
       {/* Header Section */}
-      <section className="w-full bg-calvary-blue text-white py-8">
+      <section className="w-full bg-anchor-red text-white py-8">
         <div className="w-3/4 mx-auto text-center">
           <h1 className="text-5xl font-extrabold mb-4">MORE</h1>
           <p className="text-xl">Additional Resources & Content</p>
@@ -39,7 +39,7 @@ export default function MorePage() {
               </p>
               <button 
                 onClick={() => router.push('/events')}
-                className="bg-calvary-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#3db1d0] transition-colors duration-200"
+                className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#3db1d0] transition-colors duration-200"
               >
                 VIEW CALENDAR
               </button>

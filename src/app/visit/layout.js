@@ -1,29 +1,29 @@
 export const metadata = {
-  title: 'Visit Us - Calvary Baptist Church Simi Valley',
-  description: 'Plan your visit to Calvary Baptist Church in Simi Valley, CA. Find service times, directions, and what to expect when you visit our Bible-believing Baptist church.',
+  title: 'Visit Us - Anchor Baptist Church Simi Valley',
+  description: 'Plan your visit to Anchor Baptist Church in Simi Valley, CA. Find service times, directions, and what to expect when you visit our Bible-believing Baptist church.',
   keywords: 'visit church, Simi Valley church location, service times, church directions, Baptist church California, Sunday service times, church address, Simi Valley California',
   // Open Graph
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://calvarybaptistsv.org/visit',
-    siteName: 'Calvary Baptist Church Simi Valley',
-    title: 'Visit Us - Calvary Baptist Church Simi Valley',
-    description: 'Plan your visit to Calvary Baptist Church in Simi Valley, CA. Find service times, directions, and what to expect when you visit our Bible-believing Baptist church.',
+    siteName: 'Anchor Baptist Church Simi Valley',
+    title: 'Visit Us - Anchor Baptist Church Simi Valley',
+    description: 'Plan your visit to Anchor Baptist Church in Simi Valley, CA. Find service times, directions, and what to expect when you visit our Bible-believing Baptist church.',
     images: [
       {
         url: 'https://calvarybaptistsv.org/synagogue.jpg',
         width: 1200,
         height: 630,
-        alt: 'Calvary Baptist Church building exterior - located at 9 West Bonita Drive in Simi Valley, California',
+        alt: 'Anchor Baptist Church building exterior - located at 9 West Bonita Drive in Simi Valley, California',
       },
     ],
   },
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: 'Visit Us - Calvary Baptist Church Simi Valley',
-    description: 'Plan your visit to Calvary Baptist Church in Simi Valley, CA. Find service times, directions, and what to expect when you visit our Bible-believing Baptist church.',
+    title: 'Visit Us - Anchor Baptist Church Simi Valley',
+    description: 'Plan your visit to Anchor Baptist Church in Simi Valley, CA. Find service times, directions, and what to expect when you visit our Bible-believing Baptist church.',
     images: ['https://calvarybaptistsv.org/synagogue.jpg'],
     creator: '@calvarybaptistsv',
   },
@@ -40,7 +40,7 @@ const structuredData = {
     {
       "@type": "LocalBusiness",
       "@id": "https://calvarybaptistsv.org/visit/#localbusiness",
-      "name": "Calvary Baptist Church",
+      "name": "Anchor Baptist Church",
       "description": "Independent, Bible-believing Baptist church in Simi Valley, CA using the King James Version (KJV) Bible",
       "url": "https://calvarybaptistsv.org",
       "telephone": "+1-805-000-0000",
@@ -66,8 +66,8 @@ const structuredData = {
       "priceRange": "Free",
       "paymentAccepted": "Donation",
       "currenciesAccepted": "USD",
-      "image": "https://calvarybaptistsv.org/calvary-baptist-logo.png",
-      "logo": "https://calvarybaptistsv.org/calvary-baptist-logo.png",
+      "image": "https://calvarybaptistsv.org/anchor-baptist-logo.png",
+      "logo": "https://calvarybaptistsv.org/anchor-baptist-logo.png",
       "sameAs": [
         "https://www.facebook.com/profile.php?id=100081858694086",
         "https://www.youtube.com/@calvarybaptistchurchofsimi2174"
@@ -87,17 +87,17 @@ const structuredData = {
       "@type": "WebPage",
       "@id": "https://calvarybaptistsv.org/visit/#webpage",
       "name": "Visit Us",
-      "description": "Plan your visit to Calvary Baptist Church in Simi Valley, CA. Find service times, directions, and what to expect when you visit our Bible-believing Baptist church.",
+      "description": "Plan your visit to Anchor Baptist Church in Simi Valley, CA. Find service times, directions, and what to expect when you visit our Bible-believing Baptist church.",
       "url": "https://calvarybaptistsv.org/visit",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://calvarybaptistsv.org/#website",
-        "name": "Calvary Baptist Church Simi Valley",
+        "name": "Anchor Baptist Church Simi Valley",
         "url": "https://calvarybaptistsv.org"
       },
       "about": {
         "@type": "Thing",
-        "name": "Visiting Calvary Baptist Church"
+        "name": "Visiting Anchor Baptist Church"
       }
     }
   ]
