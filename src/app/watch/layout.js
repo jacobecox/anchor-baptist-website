@@ -12,7 +12,7 @@ export const metadata = {
     description: 'Watch live and recorded services from Anchor Baptist Church in Simi Valley, CA. Join us online through our YouTube channel for Bible-believing Baptist services.',
     images: [
       {
-        url: 'https://calvarybaptistsv.org/anchor-baptist-logo.png',
+        url: 'https://calvarybaptistsv.org/anchor-baptist.png',
         width: 1200,
         height: 630,
         alt: 'Anchor Baptist Church Simi Valley - Watch Live Services',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Watch Live Services - Anchor Baptist Church Simi Valley',
     description: 'Watch live and recorded services from Anchor Baptist Church in Simi Valley, CA. Join us online through our YouTube channel for Bible-believing Baptist services.',
-    images: ['https://calvarybaptistsv.org/anchor-baptist-logo.png'],
+    images: ['https://calvarybaptistsv.org/anchor-baptist.png'],
     creator: '@calvarybaptistsv',
   },
   // Canonical URL

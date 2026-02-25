@@ -14,9 +14,9 @@ export const metadata = {
   description: 'Join us at Anchor Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version (KJV) Bible. Sunday and Wednesday services.',
   keywords: 'Anchor Baptist Church, Simi Valley church, Baptist church California, KJV Bible, King James Version, Sunday service, Bible-believing church, Simi Valley California',
   icons: {
-    icon: '/ABC square logo no background.png',
-    shortcut: '/ABC square logo no background.png',
-    apple: '/ABC square logo no background.png',
+    icon: '/anchor-baptist.png',
+    shortcut: '/anchor-baptist.png',
+    apple: '/anchor-baptist.png',
   },
   openGraph: {
     type: 'website',
@@ -27,7 +27,7 @@ export const metadata = {
     description: 'Join us at Anchor Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version (KJV) Bible. Sunday and Wednesday services.',
     images: [
       {
-        url: 'https://calvarybaptistsv.org/anchor-baptist-logo.jpg',
+        url: 'https://calvarybaptistsv.org/anchor-baptist.png',
         width: 1200,
         height: 630,
         alt: 'Anchor Baptist Church Simi Valley Logo',
@@ -38,12 +38,12 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Anchor Baptist Church Simi Valley - KJV Bible-Believing Baptist Church',
     description: 'Join us at Anchor Baptist Church in Simi Valley, CA. Independent, Bible-believing Baptist church using the King James Version (KJV) Bible.',
-    images: ['https://calvarybaptistsv.org/anchor-baptist-logo.jpg'],
+    images: ['https://calvarybaptistsv.org/anchor-baptist.png'],
     creator: '@calvarybaptistsv',
   },
   other: {
-    'theme-color': '#00b3e6',
-    'msapplication-TileColor': '#00b3e6',
+    'theme-color': '#C1121F',
+    'msapplication-TileColor': '#C1121F',
   },
   alternates: {
     canonical: 'https://calvarybaptistsv.org',

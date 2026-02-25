@@ -26,12 +26,12 @@ export default function Navbar() {
         <div className="w-full flex items-center justify-between px-12 md:px-20 py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <button 
+            <button
               onClick={() => router.push('/')}
               className="bg-transparent border-none outline-none p-0"
             >
               <OptimizedImage
-                src="/ABCSV-logo.jpg"
+                src="/anchor-baptist-logo-horizontal.png"
                 alt="Anchor Baptist Church Simi Valley"
                 width={256}
                 height={64}
@@ -46,31 +46,31 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-2">
             <button 
               onClick={() => router.push('/')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
             >
               Home
             </button>
             <button 
               onClick={() => router.push('/visit')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
             >
               Visit Us
             </button>
             <button 
               onClick={() => router.push('/how-to-be-saved')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
             >
               How to Be Saved
             </button>
             <button 
               onClick={() => router.push('/watch')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
             >
               Watch Live
             </button>
             <button 
               onClick={() => router.push('/beliefs')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
             >
               What We Believe
             </button>
@@ -89,13 +89,13 @@ export default function Navbar() {
                   }
                 }, 100);
               }}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
             >
               Contact
             </button>
             <button 
               onClick={() => router.push('/more')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 bg-transparent border-none outline-none text-lg font-medium px-3"
             >
               More
             </button>
@@ -122,31 +122,31 @@ export default function Navbar() {
           <div className="flex flex-col py-4">
             <button 
               onClick={() => handleNavClick('/')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
             >
               Home
             </button>
             <button 
               onClick={() => handleNavClick('/visit')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
             >
               Visit Us
             </button>
             <button 
               onClick={() => handleNavClick('/how-to-be-saved')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
             >
               How to Be Saved
             </button>
             <button 
               onClick={() => handleNavClick('/watch')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
             >
               Watch Live
             </button>
             <button 
               onClick={() => handleNavClick('/beliefs')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
             >
               What We Believe
             </button>
@@ -165,13 +165,13 @@ export default function Navbar() {
                   }
                 }, 100);
               }}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
             >
               Contact
             </button>
             <button 
               onClick={() => handleNavClick('/more')}
-              className="text-anchor-red hover:text-custom-blue transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
+              className="text-anchor-red hover:text-custom-gray transition-colors duration-200 py-3 px-6 text-left hover:bg-gray-50 text-lg font-medium"
             >
               More
             </button>

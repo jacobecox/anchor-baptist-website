@@ -6,7 +6,7 @@ import { supabase } from '../../lib/supabase';
 
 // Lazy load ContactForm component
 const ContactForm = dynamic(() => import('../components/ContactForm'), {
-  loading: () => <div className="w-full bg-custom-blue text-white py-16">
+  loading: () => <div className="w-full bg-custom-gray text-white py-16">
     <div className="w-3/4 mx-auto text-center">
       <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
       <p className="text-xl mb-8">Loading contact form...</p>
@@ -61,10 +61,10 @@ export default function WatchPage() {
       </section>
 
       {/* Main Content */}
-      <section className="w-full bg-white text-custom-blue">
+      <section className="w-full bg-white text-custom-gray">
         <div className="w-3/4 mx-auto text-center">
-          <div className="rounded-lg p-12 mb-12">
-            <h2 className="text-4xl font-bold mb-6 text-custom-blue">Watch Our Services Online</h2>
+          <div className="rounded-lg p-8 mb-4">
+            <h2 className="text-4xl font-bold mb-6 text-custom-gray">Watch Our Services Online</h2>
             <p className="text-xl mb-8">
               Can&apos;t make it to church in person? Join us online through our YouTube channel where we stream our services live and share recorded sermons.
             </p>
@@ -88,7 +88,7 @@ export default function WatchPage() {
         </div>
 
         {/* Service Times Section - Full Width */}
-        <div className="w-full bg-gray-100 text-custom-blue py-16">
+        <div className="w-full bg-gray-100 text-custom-gray py-16">
           <div className="w-3/4 mx-auto text-center">
             <h3 className="text-4xl font-bold mb-6">Service Times</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -146,10 +146,10 @@ export default function WatchPage() {
       <ContactForm 
         title="CONTACT US"
         subtitle="Having trouble accessing our live stream? We're here to help!"
-        backgroundColor="bg-custom-blue"
+        backgroundColor="bg-custom-gray"
         textColor="text-white"
         buttonColor="bg-white"
-        buttonTextColor="text-custom-blue"
+        buttonTextColor="text-custom-gray"
       />
 
       {/* Page Footer */}

@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'anchor-red': '#0099cb',
-        'custom-blue': '#003d51',
+        'anchor-red': '#C1121F',
+        'custom-gray': '#2D2D2D',
       },
     },
   },

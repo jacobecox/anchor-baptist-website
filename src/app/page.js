@@ -28,7 +28,7 @@ const PhotoSlideshow = dynamic(() => import('./components/PhotoSlideshow').catch
 const ContactForm = dynamic(() => import('./components/ContactForm').catch((error) => {
   console.warn('Failed to load ContactForm component:', error);
   const ContactFormFallback = () => (
-    <div className="w-full bg-custom-blue text-white py-16">
+    <div className="w-full bg-custom-gray text-white py-16">
       <div className="w-3/4 mx-auto text-center">
         <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
         <p className="text-xl mb-8">Contact form unavailable</p>
@@ -38,7 +38,7 @@ const ContactForm = dynamic(() => import('./components/ContactForm').catch((erro
   ContactFormFallback.displayName = 'ContactFormFallback';
   return ContactFormFallback;
 }), {
-  loading: () => <div className="w-full bg-custom-blue text-white py-16">
+  loading: () => <div className="w-full bg-custom-gray text-white py-16">
     <div className="w-3/4 mx-auto text-center">
       <h2 className="text-4xl font-bold mb-4">CONTACT US</h2>
       <p className="text-xl mb-8">Loading contact form...</p>
@@ -104,11 +104,11 @@ export default function HomePage() {
         />
 
         {/* Horizontal Line */}
-        <div className="w-full h-12 bg-custom-blue"></div>
+        <div className="w-full h-12 bg-custom-gray"></div>
 
         {/* WHO WE ARE Section */}
         <div className="w-full bg-white text-black flex items-center justify-center pt-14">
-          <h2 className="text-5xl font-extrabold text-center w-3/4 text-custom-blue">WHO WE ARE:</h2>
+          <h2 className="text-5xl font-extrabold text-center w-3/4 text-custom-gray">WHO WE ARE:</h2>
         </div>
 
       {/* Hero Section */}
@@ -119,7 +119,7 @@ export default function HomePage() {
         </h1>
             <button 
               onClick={() => router.push('/beliefs')}
-              className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
+              className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-red-800 transition-colors duration-200"
             >
           WHAT WE BELIEVE
         </button>
@@ -157,13 +157,13 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button 
                 onClick={() => router.push('/visit')}
-                className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
+                className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-red-800 transition-colors duration-200"
               >
                 VISIT US
               </button>
               <button 
                 onClick={() => router.push('/watch')}
-                className="bg-custom-blue text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#005a7a] transition-colors duration-200"
+                className="bg-custom-gray text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-slate-600 transition-colors duration-200"
               >
                 WATCH ONLINE
               </button>
@@ -174,13 +174,13 @@ export default function HomePage() {
         {/* BRING YOUR FAMILY Section */}
         <div className="w-full bg-white text-black flex items-center justify-center py-24">
           <div className="w-3/4 md:w-1/2 text-center">
-            <h3 className="text-5xl font-extrabold mb-4 text-custom-blue">BRING YOUR FAMILY</h3>
+            <h3 className="text-5xl font-extrabold mb-4 text-custom-gray">BRING YOUR FAMILY</h3>
             <p className="text-2xl mb-6 text-gray-600">
               Our friendly environment at Anchor Baptist welcomes you and your family to worship with us this Sunday!
             </p>
             <button 
               onClick={() => router.push('/visit')}
-              className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-[#00b3e6] transition-colors duration-200"
+              className="bg-anchor-red text-white py-4 px-8 rounded-full font-semibold text-xl hover:bg-red-800 transition-colors duration-200"
             >
               VISIT US
             </button>
@@ -191,10 +191,10 @@ export default function HomePage() {
         <ContactForm 
           title="CONTACT US"
           subtitle="Have questions? We'd love to hear from you."
-          backgroundColor="bg-custom-blue"
+          backgroundColor="bg-custom-gray"
           textColor="text-white"
           buttonColor="bg-white"
-          buttonTextColor="text-custom-blue"
+          buttonTextColor="text-custom-gray"
         />
 
 

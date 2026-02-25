@@ -12,7 +12,7 @@ export const metadata = {
     description: 'Stay updated with upcoming events, special services, and activities at Anchor Baptist Church in Simi Valley, CA. Join us for fellowship and worship.',
     images: [
       {
-        url: 'https://calvarybaptistsv.org/anchor-baptist-logo.png',
+        url: 'https://calvarybaptistsv.org/anchor-baptist.png',
         width: 1200,
         height: 630,
         alt: 'Anchor Baptist Church Events Calendar',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Church Events - Anchor Baptist Church Simi Valley',
     description: 'Stay updated with upcoming events, special services, and activities at Anchor Baptist Church in Simi Valley, CA. Join us for fellowship and worship.',
-    images: ['https://calvarybaptistsv.org/anchor-baptist-logo.png'],
+    images: ['https://calvarybaptistsv.org/anchor-baptist.png'],
     creator: '@calvarybaptistsv',
   },
   // Canonical URL

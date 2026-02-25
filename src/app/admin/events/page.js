@@ -293,7 +293,7 @@ export default function AdminEventsPage() {
   return (
     <main className="font-sans min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="w-full bg-custom-blue text-white py-8">
+      <section className="w-full bg-custom-gray text-white py-8">
         <div className="w-3/4 mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
             <div>
@@ -303,13 +303,13 @@ export default function AdminEventsPage() {
             <div className="flex flex-col md:flex-row gap-2 md:gap-3">
               <button
                 onClick={() => router.push('/admin/dashboard')}
-                className="bg-white text-custom-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-custom-gray px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
               >
                 Dashboard
               </button>
               <button
                 onClick={handleLogout}
-                className="bg-white text-custom-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-custom-gray px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
               >
                 Logout
               </button>
@@ -335,7 +335,7 @@ export default function AdminEventsPage() {
             });
             setShowForm(true);
           }}
-          className="bg-anchor-red text-white px-6 py-3 rounded-lg font-semibold mb-6 hover:bg-[#00b3e6] transition-colors duration-200"
+          className="bg-anchor-red text-white px-6 py-3 rounded-lg font-semibold mb-6 hover:bg-red-800 transition-colors duration-200"
         >
           Add New Event
         </button>
@@ -343,7 +343,7 @@ export default function AdminEventsPage() {
         {/* Event Form */}
         {showForm && (
           <div className="bg-white border border-gray-300 rounded-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-custom-blue">
+            <h2 className="text-2xl font-bold mb-4 text-custom-gray">
               {editingEvent ? 'Edit Event' : 'Add New Event'}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -441,7 +441,7 @@ export default function AdminEventsPage() {
               <div className="flex space-x-4">
                 <button
                   type="submit"
-                  className="bg-anchor-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
+                  className="bg-anchor-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-800 transition-colors duration-200"
                 >
                   {editingEvent ? 'Update Event' : 'Add Event'}
                 </button>
@@ -460,7 +460,7 @@ export default function AdminEventsPage() {
         {/* Events List */}
         <div className="bg-white border border-gray-300 rounded-lg">
           <div className="p-6 border-b border-gray-300">
-            <h2 className="text-2xl font-bold text-custom-blue">All Events</h2>
+            <h2 className="text-2xl font-bold text-custom-gray">All Events</h2>
           </div>
           
           {loading ? (
@@ -473,7 +473,7 @@ export default function AdminEventsPage() {
                 <div key={`${event.id}-${index}`} className="p-6">
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-custom-blue mb-2">
+                      <h3 className="text-xl font-semibold text-custom-gray mb-2">
                         {event.title}
                         {event.is_recurring_instance && (
                           <span className="ml-2 text-sm bg-anchor-red text-white px-2 py-1 rounded">
@@ -501,13 +501,13 @@ export default function AdminEventsPage() {
                         <>
                           <button
                             onClick={() => handleEdit(event)}
-                            className="bg-anchor-red text-white px-4 py-2 rounded-lg text-sm hover:bg-[#00b3e6] transition-colors duration-200"
+                            className="bg-custom-gray text-white px-4 py-2 rounded-lg text-sm hover:bg-slate-600 transition-colors duration-200"
                           >
                             Edit
                           </button>
                           <button
                             onClick={() => handleDelete(event.id)}
-                            className="bg-red-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-600 transition-colors duration-200"
+                            className="bg-anchor-red text-white px-4 py-2 rounded-lg text-sm hover:bg-red-800 transition-colors duration-200"
                           >
                             Delete
                           </button>

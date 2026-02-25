@@ -196,7 +196,7 @@ export default function ServiceTimesAdmin() {
   return (
     <main className="font-sans min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="w-full bg-custom-blue text-white py-8">
+      <section className="w-full bg-custom-gray text-white py-8">
         <div className="w-3/4 mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
             <div>
@@ -206,13 +206,13 @@ export default function ServiceTimesAdmin() {
             <div className="flex flex-col md:flex-row gap-2 md:gap-3">
               <button
                 onClick={() => router.push('/admin/dashboard')}
-                className="bg-white text-custom-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-custom-gray px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
               >
                 Dashboard
               </button>
               <button
                 onClick={handleLogout}
-                className="bg-white text-custom-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-custom-gray px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
               >
                 Logout
               </button>
@@ -226,7 +226,7 @@ export default function ServiceTimesAdmin() {
           
           {/* Add Service Times Form */}
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-bold mb-6 text-custom-blue">Add Service Time</h2>
+            <h2 className="text-2xl font-bold mb-6 text-custom-gray">Add Service Time</h2>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -237,7 +237,7 @@ export default function ServiceTimesAdmin() {
                   required
                   value={formData.service_name}
                   onChange={(e) => setFormData({...formData, service_name: e.target.value})}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-gray focus:border-transparent"
                 >
                   <option value="">Select a service</option>
                   <option value="Sunday Morning">Sunday Morning</option>
@@ -254,7 +254,7 @@ export default function ServiceTimesAdmin() {
                   required
                   value={formData.day_of_week}
                   onChange={(e) => setFormData({...formData, day_of_week: e.target.value})}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-gray focus:border-transparent"
                 >
                   <option value="">Select a day</option>
                   <option value="Sunday">Sunday</option>
@@ -271,14 +271,14 @@ export default function ServiceTimesAdmin() {
                   required
                   value={formData.time}
                   onChange={(e) => setFormData({...formData, time: e.target.value})}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-gray focus:border-transparent"
                   placeholder="e.g., 12:00 PM"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-custom-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-slate-700 transition-colors duration-200"
+                className="w-full bg-custom-gray text-white py-3 px-6 rounded-lg font-semibold hover:bg-slate-700 transition-colors duration-200"
               >
                 Add Service Time
               </button>
@@ -287,7 +287,7 @@ export default function ServiceTimesAdmin() {
 
           {/* Current Service Times */}
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-bold mb-6 text-custom-blue">Current Service Times</h2>
+            <h2 className="text-2xl font-bold mb-6 text-custom-gray">Current Service Times</h2>
             
             <div className="space-y-4">
               {serviceTimes.length === 0 ? (

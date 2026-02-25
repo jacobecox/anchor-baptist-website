@@ -168,7 +168,7 @@ export default function EventsPage() {
           }`}
         >
           <div className="font-semibold mb-2 md:mb-1 text-sm md:text-base">{day}</div>
-          {/* Mobile: Show blue dots for events */}
+          {/* Mobile: Show dots for events */}
           <div className="md:hidden">
             {dayEvents.length > 0 && (
               <div 
@@ -238,7 +238,7 @@ export default function EventsPage() {
       </section>
 
       {/* Main Content */}
-      <section className="w-full bg-white text-custom-blue py-12">
+      <section className="w-full bg-white text-custom-gray py-12">
         <div className="w-full px-4 md:w-3/4 md:mx-auto">
           
           {/* View Toggle */}
@@ -272,7 +272,7 @@ export default function EventsPage() {
             <>
               {/* Upcoming Events */}
               <div className="mb-12">
-                <h2 className="text-4xl font-bold mb-8 text-custom-blue">Upcoming Events</h2>
+                <h2 className="text-4xl font-bold mb-8 text-custom-gray">Upcoming Events</h2>
                 
                 {loading ? (
                   <div className="text-center py-8">
@@ -288,7 +288,7 @@ export default function EventsPage() {
                       <div key={`${event.id}-${index}`} className="bg-gray-50 rounded-lg p-6 border-l-4 border-anchor-red">
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                           <div className="flex-1">
-                            <h3 className="text-2xl font-bold text-custom-blue mb-2">
+                            <h3 className="text-2xl font-bold text-custom-gray mb-2">
                               {event.title}
                               {event.is_recurring_instance && (
                                 <span className="ml-2 text-sm bg-anchor-red text-white px-2 py-1 rounded">
@@ -338,7 +338,7 @@ export default function EventsPage() {
               {/* Past Events */}
               {pastEvents.length > 0 && (
                 <div>
-                  <h2 className="text-4xl font-bold mb-8 text-custom-blue">Past Events</h2>
+                  <h2 className="text-4xl font-bold mb-8 text-custom-gray">Past Events</h2>
                   <div className="space-y-4">
                     {pastEvents.slice(0, 5).map((event, index) => (
                       <div key={`${event.id}-${index}`} className="bg-gray-100 rounded-lg p-4 border-l-4 border-gray-400">
@@ -373,7 +373,7 @@ export default function EventsPage() {
           ) : (
             // Calendar View
             <div className="mb-12">
-              <h2 className="text-4xl font-bold mb-8 text-custom-blue">Upcoming Events</h2>
+              <h2 className="text-4xl font-bold mb-8 text-custom-gray">Upcoming Events</h2>
               
               {loading ? (
                 <div className="text-center py-8">
@@ -389,7 +389,7 @@ export default function EventsPage() {
                     >
                       ← Previous
                     </button>
-                    <h3 className="text-xl md:text-2xl font-bold text-custom-blue">
+                    <h3 className="text-xl md:text-2xl font-bold text-custom-gray">
                       {selectedMonth.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                     </h3>
                     <button
@@ -432,7 +432,7 @@ export default function EventsPage() {
               </button>
               <button 
                 onClick={() => window.location.href = '/watch'}
-                className="bg-custom-blue text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#005a7a] transition-colors duration-200"
+                className="bg-custom-gray text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-slate-600 transition-colors duration-200"
               >
                 WATCH ONLINE
               </button>
@@ -447,7 +447,7 @@ export default function EventsPage() {
           <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-custom-blue">{selectedEvent.title}</h3>
+                <h3 className="text-2xl font-bold text-custom-gray">{selectedEvent.title}</h3>
                 <button
                   onClick={closeEventModal}
                   className="text-gray-400 hover:text-gray-600 text-2xl font-bold"
@@ -505,7 +505,7 @@ export default function EventsPage() {
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={closeEventModal}
-                  className="bg-anchor-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
+                  className="bg-anchor-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-800 transition-colors duration-200"
                 >
                   Close
                 </button>
@@ -521,7 +521,7 @@ export default function EventsPage() {
           <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-custom-blue">
+                <h3 className="text-2xl font-bold text-custom-gray">
                   Events on {formatDate(selectedDayEvents[0].event_date)}
                 </h3>
                 <button
@@ -535,7 +535,7 @@ export default function EventsPage() {
               <div className="space-y-4">
                 {selectedDayEvents.map((event, index) => (
                   <div key={`${event.id}-${index}`} className="border border-gray-200 rounded-lg p-4">
-                    <h4 className="text-lg font-semibold text-custom-blue mb-2">
+                    <h4 className="text-lg font-semibold text-custom-gray mb-2">
                       {event.title}
                       {event.is_recurring_instance && (
                         <span className="ml-2 text-sm bg-anchor-red text-white px-2 py-1 rounded">
@@ -585,7 +585,7 @@ export default function EventsPage() {
               <div className="mt-6 flex justify-end">
                 <button
                   onClick={closeDayModal}
-                  className="bg-anchor-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#00b3e6] transition-colors duration-200"
+                  className="bg-anchor-red text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-800 transition-colors duration-200"
                 >
                   Close
                 </button>

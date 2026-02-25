@@ -78,8 +78,8 @@ export default function ServerSchema({ pageType = 'default' }) {
         "priceRange": "Free",
         "paymentAccepted": "Donation",
         "currenciesAccepted": "USD",
-        "image": "https://calvarybaptistsv.org/anchor-baptist-logo.png",
-        "logo": "https://calvarybaptistsv.org/anchor-baptist-logo.png",
+        "image": "https://calvarybaptistsv.org/anchor-baptist.png",
+        "logo": "https://calvarybaptistsv.org/anchor-baptist.png",
         "sameAs": [
           "https://www.facebook.com/profile.php?id=100081858694086",
           "https://www.youtube.com/@calvarybaptistchurchofsimi2174"

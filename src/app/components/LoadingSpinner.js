@@ -6,7 +6,7 @@ export default function LoadingSpinner({ size = "medium", color = "blue" }) {
   };
 
   const colorClasses = {
-    blue: "text-custom-blue",
+    blue: "text-custom-gray",
     white: "text-white",
     gray: "text-gray-600"
   };

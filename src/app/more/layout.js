@@ -12,7 +12,7 @@ export const metadata = {
     description: 'Additional resources and information from Anchor Baptist Church in Simi Valley, CA. Find events, contact information, and more about our Bible-believing Baptist church.',
     images: [
       {
-        url: 'https://calvarybaptistsv.org/anchor-baptist-logo.png',
+        url: 'https://calvarybaptistsv.org/anchor-baptist.png',
         width: 1200,
         height: 630,
         alt: 'Anchor Baptist Church Resources',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'More Resources - Anchor Baptist Church Simi Valley',
     description: 'Additional resources and information from Anchor Baptist Church in Simi Valley, CA. Find events, contact information, and more about our Bible-believing Baptist church.',
-    images: ['https://calvarybaptistsv.org/anchor-baptist-logo.png'],
+    images: ['https://calvarybaptistsv.org/anchor-baptist.png'],
     creator: '@calvarybaptistsv',
   },
   // Canonical URL

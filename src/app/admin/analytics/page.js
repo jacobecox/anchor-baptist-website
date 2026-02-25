@@ -355,7 +355,7 @@ export default function AdminAnalyticsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="w-full bg-custom-blue text-white py-8">
+      <section className="w-full bg-custom-gray text-white py-8">
         <div className="w-3/4 mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
             <div>
@@ -365,13 +365,13 @@ export default function AdminAnalyticsPage() {
             <div className="flex flex-col md:flex-row gap-2 md:gap-3">
               <button
                 onClick={() => router.push('/admin/dashboard')}
-                className="bg-white text-custom-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-custom-gray px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
               >
                 Dashboard
               </button>
               <button
                 onClick={handleLogout}
-                className="bg-white text-custom-blue px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+                className="bg-white text-custom-gray px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
               >
                 Logout
               </button>

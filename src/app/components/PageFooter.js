@@ -37,12 +37,12 @@ export default function PageFooter() {
   }, {});
 
   return (
-    <div className="w-full bg-custom-blue pt-2 pb-16">
+    <div className="w-full bg-custom-gray pt-2 pb-16">
       <div className="w-4/5 md:w-3/4 mx-auto text-center">
         {/* Church Logo */}
         <div className="mb-12">
           <img
-            src="/anchor-baptist-logo.jpg"
+            src="/anchor-baptist-logo-horizontal.png"
             alt="Anchor Baptist Church Simi Valley"
             className="w-2/3 md:w-1/3 h-auto mx-auto"
             loading="eager"

@@ -55,7 +55,7 @@ export default function AdminPage() {
       <div className="w-full max-w-md">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-extrabold text-custom-blue mb-2">Admin Login</h1>
+            <h1 className="text-3xl font-extrabold text-custom-gray mb-2">Admin Login</h1>
             <p className="text-gray-600">Sign in to manage your church website</p>
           </div>
 
@@ -75,7 +75,7 @@ export default function AdminPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-gray focus:border-transparent"
                 placeholder="admin@calvarybcsv.com"
               />
             </div>
@@ -89,7 +89,7 @@ export default function AdminPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-blue focus:border-transparent"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom-gray focus:border-transparent"
                 placeholder="Enter your password"
               />
             </div>
@@ -97,7 +97,7 @@ export default function AdminPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-custom-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-slate-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-custom-gray text-white py-3 px-6 rounded-lg font-semibold hover:bg-slate-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Signing In...' : 'Sign In'}
             </button>
@@ -106,7 +106,7 @@ export default function AdminPage() {
           <div className="mt-8 text-center">
             <Link
               href="/"
-              className="text-custom-blue hover:text-slate-700 text-sm font-medium"
+              className="text-custom-gray hover:text-slate-700 text-sm font-medium"
             >
               ← Back to Website
             </Link>
